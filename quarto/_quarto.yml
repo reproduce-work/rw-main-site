@@ -8,11 +8,30 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: docs/getting-started.qmd
-        text: Getting Started
+      - sidebar:docs
       - about.qmd
+      
+
   sidebar:
-    style: floating
+    - id: docs
+      title: "Documentation"
+      style: "floating"
+      background: light
+      contents:
+      - section: Getting Started
+        contents:
+          - href: docs/getting-started.qmd#installation
+            text: Installation
+          - href: docs/getting-started.qmd#basic-commands
+            text: Basic Commands
+      - section: Scientific computing environments
+        contents: 
+          - href: docs/jupyter.qmd
+            text: "`jupyter`"
+      - section: Document environments
+        contents: 
+          - href: docs/markdown-latex.qmd
+            text: "`markdown-latex`"
 
 format:
   html:
@@ -20,7 +39,5 @@ format:
     css: styles.css
     toc: true
 
-
 resource-files:
   - files
-  - files/scripts/install.sh

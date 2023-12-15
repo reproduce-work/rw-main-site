@@ -1,29 +1,38 @@
 ---
-title: "Working with the `markdown-latex` document environment"
+title: "The `markdown-latex` document environment"
 ---
 
+## Setup
 
-### 1. `INSERT` Command
+Composing a report in the `markdown-latex` environment allows you to automatically reference and embed dynamically generated content and results from your scientific code.
+
+To start writing your report, run [`rw develop`](/docs/getting-started.html#develop-rw-develop)
+ the markdown file `report/main.md`
+
+
+## Commands
+
+### `INSERT` 
 - **Syntax**: `\INSERT{variable_name}`
 - **Description**: This command is used to insert dynamic content into the document. The `variable_name` refers to a specific piece of data or value defined elsewhere, often in a TOML configuration file. When the document is processed, the `INSERT` command is replaced with the actual value of `variable_name`.
 - **Use Case**: Use `INSERT` to dynamically add data like dates, names, or any other variable content that might change or needs to be reused across different documents.
 
-### 2. `LINK` Command
+### `LINK` 
 - **Syntax**: `\LINK{variable_name}`
 - **Description**: This command is functionally similar to the `\INSERT` command, in that it will dynamically insert the value of the `variable_name` from your published data, but it will also wrap that value in a hyperlink to the metadata associated with that variable in the `pubdata.toml` file. Once compiled, it turns into an actual clickable link in the document.
 - **Use Case**: Use `LINK` to embed hyperlinks seamlessly in your text, linking to external resources, references, or related documents without cluttering your markdown with URLs.
 
-### 3. `FILE` Command
+### `FILE` 
 - **Syntax**: `\FILE{file_path}`
 - **Description**: This command is used to reference or include external files in the document. `file_path` specifies the location of the file. During processing, the reproduce.work script copies the file into your LaTeX project and allows for you to reference it in your 
 - **Use Case**: Use `FILE` when you need to include external resources like images, dynamically generated `.tex` files, or other data that is generated in the process of your research.
 
-### 4. `BADGE` Command
+### `BADGE` 
 - **Syntax**: `\BADGE{variable_name}`
-- **Description**: This command is designed to insert a badge `source` <img src="/files/img/logo.svg" style="display: inline; height: 18px; position: relative; top: 2px;" />. The `variable_name` is used to fetch the badge's image URL and other related metadata. This command typically generates a small image, often linked to an external source.
-- **Use Case**: Use `BADGE` to insert recognition badges, logos, or any small icons that provide quick visual information or branding to your document.
+- **Description**: This command is inserts a badge --- <a href="#">`source` <img src="/files/img/logo.svg" style="display: inline; height: 16px;" /></a> --- that links directly . The `variable_name` is used to fetch the badge's image URL and other related metadata. This command typically generates a small image, often linked to an external source.
+- **Use Case**: Place a `BADGE` next to or below tables and figures to reference the data/code used to generate them.
 
-### 5. `WRAP` Command
+### `WRAP` 
 - **Syntax**: `\WRAP{variable_name}`
-- **Description**: The `WRAP` command is used to create a specially formatted section or a block in the document. It wraps the content specified by `variable_name` in additional formatting, potentially including links, badges, or other decorative elements.
-- **Use Case**: Use `WRAP` for highlighting or distinguishing certain sections of your document, such as quotes, special notes, or featured content, with additional styling or formatting.
+- **Description**: This command is similar to the `BADGE` command, but rather than merely inserting the badge in place, it wraps the data referenced by `variable_name` in a table environment and places the badge below the dynamically inserted content.
+- **Use Case**: `WRAP` is most suitable for dynamically generated tables.

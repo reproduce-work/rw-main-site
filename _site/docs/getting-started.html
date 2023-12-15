@@ -119,10 +119,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../docs/getting-started.html" rel="" target="" aria-current="page">
- <span class="menu-text">Getting Started</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li class="dropdown-header">Getting Started</li>
+        <li>
+    <a class="dropdown-item" href="../docs/getting-started.html#installation" rel="" target="">
+ <span class="dropdown-text">Installation</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/getting-started.html#basic-commands" rel="" target="">
+ <span class="dropdown-text">Basic Commands</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Scientific computing environments</li>
+        <li>
+    <a class="dropdown-item" href="../docs/jupyter.html" rel="" target="">
+ <span class="dropdown-text"><code>jupyter</code></span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Document environments</li>
+        <li>
+    <a class="dropdown-item" href="../docs/markdown-latex.html" rel="" target="">
+ <span class="dropdown-text"><code>markdown-latex</code></span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
@@ -148,6 +172,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Getting Started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/getting-started.html#installation" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/getting-started.html#basic-commands" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic Commands</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Scientific computing environments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/jupyter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>jupyter</code></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Document environments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/markdown-latex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>markdown-latex</code></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -158,12 +243,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <li><a href="#basic-commands" id="toc-basic-commands" class="nav-link" data-scroll-target="#basic-commands">Basic Commands</a>
   <ul class="collapse">
   <li><a href="#initialize-rw-init" id="toc-initialize-rw-init" class="nav-link" data-scroll-target="#initialize-rw-init">1. Initialize: <code>rw init</code></a></li>
   <li><a href="#build-rw-build" id="toc-build-rw-build" class="nav-link" data-scroll-target="#build-rw-build">2. Build: <code>rw build</code></a></li>
   <li><a href="#develop-rw-develop" id="toc-develop-rw-develop" class="nav-link" data-scroll-target="#develop-rw-develop">3. Develop: <code>rw develop</code></a></li>
-  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing packages</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -217,8 +301,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Install to your current directory. This creates a folder in your current directory named <code>rw-project</code>; with this choice, the <code>rw</code> command line interface will only be available in that directory.</li>
 </ol>
 </section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<section id="basic-commands" class="level2">
+<h2 class="anchored" data-anchor-id="basic-commands">Basic Commands</h2>
 <p>There are THREE main commands in the reproduce.work workflow:</p>
 <ol type="1">
 <li><code>rw init</code>: buildialize a new project</li>
@@ -240,24 +324,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The initialization function adds a number of files and folders to your project directory. The most important of these are:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Where analysis code and data should go</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code/</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> 00_start.ipynb</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> requirements.txt</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Where you will author your report/manuscript</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">report/</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> main.md </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> latex/</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Metadata and configuration for your project </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Files in this directory are automatically generated and updated by reproduce.work</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ex">reproduce/</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> config.toml</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> pubdata.toml</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> Dockerfile</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ex">.gitignore</span> <span class="co"># Files to be ignored by Git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="tree">
+<div class="block-title">
+<p>
+Project directory structure
+</p>
+</div>
+<ul>
+<li>
+<span class="folder">code/</span>
+<ul>
+<li>
+<span class="file">00_start.ipynb</span>
+</li>
+<li>
+<span class="file">requirements.txt</span>
+</li>
+</ul>
+</li>
+<li>
+<span class="folder">report/</span>
+<ul>
+<li>
+<span class="file">main.md</span>
+</li>
+<li>
+<span class="folder">latex/</span>
+</li>
+</ul>
+</li>
+<li>
+<span class="folder">reproduce/</span>
+<ul>
+<li>
+<span class="file">config.toml</span>
+</li>
+<li>
+<span class="file">pubdata.toml</span>
+</li>
+<li>
+<span class="file">Dockerfile</span>
+</li>
+</ul>
+</li>
+<li>
+<span class="file">.gitignore</span>
+</li>
+</ul>
+</div>
 </section>
 <section id="build-rw-build" class="level3">
 <h3 class="anchored" data-anchor-id="build-rw-build">2. Build: <code>rw build</code></h3>
@@ -271,20 +385,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>A watch process that automatically re-compiles your project when changes are detected</li>
 </ol>
 <p>If you are not actively writing your manuscript and do not need to compile your report, you can run <code>rw develop --watch=false</code> to start only the Jupyter Lab server.</p>
-<section id="note" class="level4">
-<h4 class="anchored" data-anchor-id="note">Note!</h4>
-<blockquote class="blockquote">
-<p>Due to idiosyncrasies within the Jupyter ecosystem, when using publish_data or publish_file, you must first run register_notebook(‘code/<path to="" this="" notebook="">.ipynb’). If you have multiple notebooks open simultaneously, keep in mind that only the most recently registered notebook will be used as the generating script for any data published with publish_data or publish_file.</path></p>
-</blockquote>
-</section>
-</section>
-<section id="installing-packages" class="level3">
-<h3 class="anchored" data-anchor-id="installing-packages">Installing packages</h3>
-<p>While in the development environment, you can install packages in one of two ways:</p>
-<ul>
-<li><p><strong>Persistent</strong>: Add your desired packages on separate lines to <code>code/requirements.txt</code> and run <code>rw build</code> again. After “building” your dev environment, you can stop and restart it and your packages will be installed.</p></li>
-<li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>pip install &lt;package_name&gt;</code>; however keep in mind that packages installed this way will not persist across sessions (i.e.&nbsp;if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to <code>code/requirements.txt</code>.</p></li>
-</ul>
 <!-- Invisible Link to Include the File in Build -->
 <p><a href="files/dist/rw-linux" style="display:none;">Invisible Link</a> <a href="files/dist/rw-macos" style="display:none;">Invisible Link</a> <a href="files/dist/install.sh" style="display:none;">Invisible Link</a></p>
 

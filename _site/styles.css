@@ -107,3 +107,78 @@
 .cta-button:hover {
     background-color: #119f69;
 }
+
+summary.h2 {
+    font-family: 'Gabarito', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.tree {
+  background-color:rgba(233,236,239,.65);
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.tree div.block-title {
+  padding: 3px 10px;
+  margin: 0 0 10px 0;
+  background-color: rgba(219,219,219,.8);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.tree div.block-title p {
+  margin: 0;
+}
+
+.tree ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px 10px 20px;
+}
+
+.tree li {
+  margin: 0;
+  padding: 0 0 0 20px;
+  line-height: 1.5em;
+  position: relative;
+}
+
+.folder:before, .file:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  margin-top: -5px;
+  border-left: 1px solid #000;
+  width: 15px;
+  height: 0;
+}
+
+.folder:after, .file:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  margin-top: -5px;
+  border-top: 1px solid #000;
+  width: 0;
+  height: 10px;
+}
+
+.folder:before {
+  border-left: 0;
+  border-bottom: 1px solid #000;
+  width: 0;
+  height: 15px;
+}
+
+.folder {
+  font-weight: bold;
+}
+
+.file {
+  color: #666;
+}

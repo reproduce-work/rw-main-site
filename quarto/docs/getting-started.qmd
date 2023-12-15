@@ -30,7 +30,7 @@ You will be prompted with two options:
 1. Install to your machine (in `/usr/local/bin`) for use anywhere in your command line
 2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line interface will only be available in that directory. 
 
-## Usage
+## Basic Commands
 
 There are THREE main commands in the reproduce.work workflow:
 
@@ -56,27 +56,33 @@ rw init
 The initialization function adds a number of files and folders to your project directory. The most important of these are:
 
 
-```bash
-# Where analysis code and data should go
-code/
-  |_ 00_start.ipynb
-  |_ requirements.txt
-
-# Where you will author your report/manuscript
-report/
-  |_ main.md 
-  |_ latex/
-
-# Metadata and configuration for your project 
-# Files in this directory are automatically generated and updated by reproduce.work
-reproduce/
-  |_ config.toml
-  |_ pubdata.toml
-  |_ Dockerfile
-
-.gitignore # Files to be ignored by Git
-```
-
+<div class="tree">
+<div class="block-title">
+<p>Project directory structure</p>
+</div>
+<ul>
+<li><span class="folder">code/</span>
+<ul>
+<li><span class="file">00_start.ipynb</span></li>
+<li><span class="file">requirements.txt</span></li>
+</ul>
+</li>
+<li><span class="folder">report/</span>
+<ul>
+<li><span class="file">main.md</span></li>
+<li><span class="folder">latex/</span></li>
+</ul>
+</li>
+<li><span class="folder">reproduce/</span>
+<ul>
+<li><span class="file">config.toml</span></li>
+<li><span class="file">pubdata.toml</span></li>
+<li><span class="file">Dockerfile</span></li>
+</ul>
+</li>
+<li><span class="file">.gitignore</span></li>
+</ul>
+</div>
 
 ### 2. Build: `rw build`
 
@@ -91,22 +97,6 @@ This command starts your scientific computing environment and allows you to begi
 2. A watch process that automatically re-compiles your project when changes are detected
 
 If you are not actively writing your manuscript and do not need to compile your report, you can run `rw develop --watch=false` to start only the Jupyter Lab server.
-
-
-#### Note!
-> Due to idiosyncrasies within the Jupyter ecosystem, when using publish_data or publish_file, you must first run register_notebook('code/<path to this notebook>.ipynb'). If you have multiple notebooks open simultaneously, keep in mind that only the most recently registered notebook will be used as the generating script for any data published with publish_data or publish_file.
-
-
-### Installing packages
-
-While in the development environment, you can install packages in one of two ways:
-
-- **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` and run `rw build` again. After "building" your dev environment, you can stop and restart it and your packages will be installed.
-
-- **Temporary**: While your dev environment is running, you can use `pip install <package_name>`; however keep in mind that packages installed this way will not persist across sessions (i.e. if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt`.
-
-
-
 
 
 

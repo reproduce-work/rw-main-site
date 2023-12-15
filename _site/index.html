@@ -64,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -85,10 +85,34 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./docs/getting-started.html" rel="" target="">
- <span class="menu-text">Getting Started</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li class="dropdown-header">Getting Started</li>
+        <li>
+    <a class="dropdown-item" href="./docs/getting-started.html#installation" rel="" target="">
+ <span class="dropdown-text">Installation</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/getting-started.html#basic-commands" rel="" target="">
+ <span class="dropdown-text">Basic Commands</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Scientific computing environments</li>
+        <li>
+    <a class="dropdown-item" href="./docs/jupyter.html" rel="" target="">
+ <span class="dropdown-text"><code>jupyter</code></span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Document environments</li>
+        <li>
+    <a class="dropdown-item" href="./docs/markdown-latex.html" rel="" target="">
+ <span class="dropdown-text"><code>markdown-latex</code></span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
@@ -99,34 +123,18 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">reproduce.work: containerization for scientists</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link" data-scroll-target="#at-a-glance">At a glance</a>
-  <ul class="collapse">
-  <li><a href="#why-containerization" id="toc-why-containerization" class="nav-link" data-scroll-target="#why-containerization">Why containerization?</a></li>
-  </ul></li>
+  <li><a href="#usage-installation" id="toc-usage-installation" class="nav-link active" data-scroll-target="#usage-installation">Usage &amp; Installation</a></li>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link" data-scroll-target="#at-a-glance">At a glance</a></li>
   <li><a href="#current-release" id="toc-current-release" class="nav-link" data-scroll-target="#current-release">Current release</a></li>
   </ul>
 </nav>
@@ -153,25 +161,20 @@ ul.task-list li input[type="checkbox"] {
 
 <p>reproduce.work is a framework for developing self-contained, self-documenting scientific projects that facilitate computational reproducibility and data traceability. This project is based from the ground up on a paradigm from software engineering called <em>containerization</em>, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods.</p>
 <p>However, <strong>reproduce.work is designed for use by <em>scientists</em></strong> and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple, intuitive framework that can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.</p>
-<section id="installation" class="level3">
-<h3 class="anchored" data-anchor-id="installation">Installation</h3>
-<p>Check out the <a href="./getting-started">Getting Started</a> page to learn how to use the reproduce.work framework:</p>
-<div>
-<pre><code>&lt;!-- Call to Action Button --&gt;
-&lt;a href="/getting-started" class="cta-button"&gt;Get Started 🧑‍🔬&lt;/a&gt;</code></pre>
+<section id="usage-installation" class="level3">
+<h3 class="anchored" data-anchor-id="usage-installation">Usage &amp; Installation</h3>
+<p>reproduce.work can be used via a simple command-line interface that requires no interaction with the underlying containerization technology.</p>
+<p>To learn more about how to use the framework, check out the <a href="./docs/getting-started">Getting Started</a> page:</p>
+<div style="text-align:center;">
+<!-- Call to Action Button -->
+<p><a href="./docs/getting-started" class="cta-button">Get Started 🧑‍🔬</a></p>
 </div>
 </section>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
-<div style="text-align:center;">
-<pre><code>&lt;img src="/files/img/nutshell.png" width="800px" /&gt;</code></pre>
+<div style="text-align:center; width: 150%; position: relative; right: 25%; z-index: 3;">
+<p><img src="./files/img/nutshell.png" style="width: 100%;"></p>
 </div>
-<section id="why-containerization" class="level3">
-<h3 class="anchored" data-anchor-id="why-containerization">Why containerization?</h3>
-<p><strong>And how is this different from existing efforts in open science?</strong></p>
-<p>Reproducibility is core to the philosophy and practice of science. However, as the credibility revolution in recent decades has shown, the practice of science has fallen woefully short of meeting even basic standards toward true and widespread reproducibility. The recent interest in <em>open</em> science has been a positive step toward improving the reproducibility of scientific research, but the open science movement has largely focused on the <em>transparency</em> of scientific research, rather than explicilty facilitating its <em>reproducibility</em>. Many of the tools and practices of open science — open data, open code, pre-registration, etc. — are important steps toward reproducibility, but they are not sufficient, as they require authors to provide detailed documentation and instructions to ensure that others can independently replicate their work. This work is often left undone and, even when it is, writing adequate documentation and troubleshooting cross-platform execution errors can be a time-consuming and error-prone process.</p>
-<p>By packaging the entire scientific environment — software, dependencies, data, and manuscripts — into containers, scientists can ensure that their experiments and analyses can be replicated exactly, irrespective of changes in underlying technology or platforms. This approach enhances the reliability of scientific findings and facilitates collaboration — both within research teams but also across the broader scientific community by allowing anyone, anywhere, anytime to build upon the work of others.</p>
-</section>
 </section>
 <section id="current-release" class="level2">
 <h2 class="anchored" data-anchor-id="current-release">Current release</h2>
