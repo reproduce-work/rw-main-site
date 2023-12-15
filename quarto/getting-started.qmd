@@ -15,17 +15,18 @@ title: "Getting started with reproduce.work"
 
 - While not required, it is also recommended that you install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.
 
-Note that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed automatically when you run the `reproduce-work build` command.
+Note that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed **inside a containerized environment** automatically when you run the `rw build` command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine.
 
 ## Installation
 
 for buildializing new projects. It can be installed by running the following command:
 
-```bash
+``` {.bash filename="Terminal"}
 curl -sSL https://reproduce.work/install | bash
 ```
 
 You will be prompted with two options:
+
 1. Install to your machine (in `/usr/local/bin`) for use anywhere in your command line
 2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line interface will only be available in that directory. 
 
@@ -33,27 +34,57 @@ You will be prompted with two options:
 
 There are THREE main commands in the reproduce.work workflow:
 
-1. `reproduce-work init`: buildialize a new project
-2. `reproduce-work build`: develop your project; analyze data, publish results, write report
-3. `reproduce-work develop`: run your project to reproduce results
+1. `rw init`: buildialize a new project
+2. `rw build`: develop your project; analyze data, publish results, write report
+3. `rw develop`: run your project to reproduce results
 
 
-### 1. `reproduce-work init <project_name>`
+### 1. Initialize: `rw init`
 
-By default, the `reproduce-work build` command will buildialize a new project using the following default options:
+By default, the `rw init` command will initialize a new project in your current directory. It is recommended that you create a new directory for each project, and run `rw init` from within that directory at the start of each project.
+
+
+``` {.bash filename="Terminal"}
+# Create a new directory for your project
+mkdir my_project
+cd my_project
+
+# Initialize a new project
+rw init 
+```
+
+The initialization function adds a number of files and folders to your project directory. The most important of these are:
+
 
 ```bash
-reproduce-work build --sci-env=python --doc-env=latex
+# Where analysis code and data should go
+code/
+  |_ 00_start.ipynb
+  |_ requirements.txt
+
+# Where you will author your report/manuscript
+report/
+  |_ main.md 
+  |_ latex/
+
+# Metadata and configuration for your project 
+# Files in this directory are automatically generated and updated by reproduce.work
+reproduce/
+  |_ config.toml
+  |_ pubdata.toml
+  |_ Dockerfile
+
+.gitignore # Files to be ignored by Git
 ```
 
 
-```bash
-reproduce-work init --sci-env=RStudio --doc-env=docx
-```
+### 2. Build: `rw build`
 
-### 2. `reproduce-work build`
 
-### 3. `reproduce-work develop`
+
+### 3. Develop: `rw develop`
+
+
 
 #### Note!
 > Due to idiosyncrasies within the Jupyter ecosystem, when using publish_data or publish_file, you must first run register_notebook('code/<path to this notebook>.ipynb'). If you have multiple notebooks open simultaneously, keep in mind that only the most recently registered notebook will be used as the generating script for any data published with publish_data or publish_file.
@@ -72,6 +103,6 @@ While in the development environment, you can install packages in one of two way
 
 
 <!-- Invisible Link to Include the File in Build -->
-<a href="files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a>
-<a href="files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a>
+<a href="files/dist/rw-linux" style="display:none;">Invisible Link</a>
+<a href="files/dist/rw-macos" style="display:none;">Invisible Link</a>
 <a href="files/dist/install.sh" style="display:none;">Invisible Link</a>

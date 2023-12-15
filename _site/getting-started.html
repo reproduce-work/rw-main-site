@@ -120,8 +120,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./getting-started.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Getting Started</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -156,9 +156,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
   <ul class="collapse">
-  <li><a href="#reproduce-work-init-project_name" id="toc-reproduce-work-init-project_name" class="nav-link" data-scroll-target="#reproduce-work-init-project_name">1. <code>reproduce-work init &lt;project_name&gt;</code></a></li>
-  <li><a href="#reproduce-work-build" id="toc-reproduce-work-build" class="nav-link" data-scroll-target="#reproduce-work-build">2. <code>reproduce-work build</code></a></li>
-  <li><a href="#reproduce-work-develop" id="toc-reproduce-work-develop" class="nav-link" data-scroll-target="#reproduce-work-develop">3. <code>reproduce-work develop</code></a></li>
+  <li><a href="#initialize-rw-init" id="toc-initialize-rw-init" class="nav-link" data-scroll-target="#initialize-rw-init">1. Initialize: <code>rw init</code></a></li>
+  <li><a href="#build-rw-build" id="toc-build-rw-build" class="nav-link" data-scroll-target="#build-rw-build">2. Build: <code>rw build</code></a></li>
+  <li><a href="#develop-rw-develop" id="toc-develop-rw-develop" class="nav-link" data-scroll-target="#develop-rw-develop">3. Develop: <code>rw develop</code></a></li>
   <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing packages</a></li>
   </ul></li>
   </ul>
@@ -196,33 +196,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>The reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install <a href="https://docs.docker.com/get-docker/">Docker</a> (or a suitable drop-in replacement such as <a href="https://orbstack.dev/">OrbStack</a>; recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine.</p></li>
 <li><p>While not required, it is also recommended that you install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a> and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.</p></li>
 </ul>
-<p>Note that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed automatically when you run the <code>reproduce-work build</code> command.</p>
+<p>Note that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed <strong>inside a containerized environment</strong> automatically when you run the <code>rw build</code> command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine.</p>
 </section>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <p>for buildializing new projects. It can be installed by running the following command:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sSL</span> https://reproduce.work/install <span class="kw">|</span> <span class="fu">bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will be prompted with two options: 1. Install to your machine (in <code>/usr/local/bin</code>) for use anywhere in your command line 2. Install to your current directory. This creates a folder in your current directory named <code>rw-project</code>; with this choice, the <code>rw</code> command line interface will only be available in that directory.</p>
+</div>
+<p>You will be prompted with two options:</p>
+<ol type="1">
+<li>Install to your machine (in <code>/usr/local/bin</code>) for use anywhere in your command line</li>
+<li>Install to your current directory. This creates a folder in your current directory named <code>rw-project</code>; with this choice, the <code>rw</code> command line interface will only be available in that directory.</li>
+</ol>
 </section>
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
 <p>There are THREE main commands in the reproduce.work workflow:</p>
 <ol type="1">
-<li><code>reproduce-work init</code>: buildialize a new project</li>
-<li><code>reproduce-work build</code>: develop your project; analyze data, publish results, write report</li>
-<li><code>reproduce-work develop</code>: run your project to reproduce results</li>
+<li><code>rw init</code>: buildialize a new project</li>
+<li><code>rw build</code>: develop your project; analyze data, publish results, write report</li>
+<li><code>rw develop</code>: run your project to reproduce results</li>
 </ol>
-<section id="reproduce-work-init-project_name" class="level3">
-<h3 class="anchored" data-anchor-id="reproduce-work-init-project_name">1. <code>reproduce-work init &lt;project_name&gt;</code></h3>
-<p>By default, the <code>reproduce-work build</code> command will buildialize a new project using the following default options:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">reproduce-work</span> build <span class="at">--sci-env</span><span class="op">=</span>python <span class="at">--doc-env</span><span class="op">=</span>latex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">reproduce-work</span> init <span class="at">--sci-env</span><span class="op">=</span>RStudio <span class="at">--doc-env</span><span class="op">=</span>docx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="initialize-rw-init" class="level3">
+<h3 class="anchored" data-anchor-id="initialize-rw-init">1. Initialize: <code>rw init</code></h3>
+<p>By default, the <code>rw init</code> command will initialize a new project in your current directory. It is recommended that you create a new directory for each project, and run <code>rw init</code> from within that directory at the start of each project.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new directory for your project</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_project</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_project</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a new project</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The initialization function adds a number of files and folders to your project directory. The most important of these are:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Where analysis code and data should go</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code/</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> 00_start.ipynb</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> requirements.txt</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Where you will author your report/manuscript</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">report/</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> main.md </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> latex/</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Metadata and configuration for your project </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Files in this directory are automatically generated and updated by reproduce.work</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ex">reproduce/</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> config.toml</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> pubdata.toml</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> Dockerfile</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ex">.gitignore</span> <span class="co"># Files to be ignored by Git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="reproduce-work-build" class="level3">
-<h3 class="anchored" data-anchor-id="reproduce-work-build">2. <code>reproduce-work build</code></h3>
+<section id="build-rw-build" class="level3">
+<h3 class="anchored" data-anchor-id="build-rw-build">2. Build: <code>rw build</code></h3>
 </section>
-<section id="reproduce-work-develop" class="level3">
-<h3 class="anchored" data-anchor-id="reproduce-work-develop">3. <code>reproduce-work develop</code></h3>
+<section id="develop-rw-develop" class="level3">
+<h3 class="anchored" data-anchor-id="develop-rw-develop">3. Develop: <code>rw develop</code></h3>
 <section id="note" class="level4">
 <h4 class="anchored" data-anchor-id="note">Note!</h4>
 <blockquote class="blockquote">
@@ -238,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>pip install &lt;package_name&gt;</code>; however keep in mind that packages installed this way will not persist across sessions (i.e.&nbsp;if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to <code>code/requirements.txt</code>.</p></li>
 </ul>
 <!-- Invisible Link to Include the File in Build -->
-<p><a href="files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a> <a href="files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a> <a href="files/dist/install.sh" style="display:none;">Invisible Link</a></p>
+<p><a href="files/dist/rw-linux" style="display:none;">Invisible Link</a> <a href="files/dist/rw-macos" style="display:none;">Invisible Link</a> <a href="files/dist/install.sh" style="display:none;">Invisible Link</a></p>
 
 
 </section>
