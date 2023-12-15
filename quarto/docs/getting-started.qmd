@@ -85,7 +85,7 @@ After initializing a project, it must be "built" which is the process of downloa
 
 ### 3. Develop: `rw develop`
 
-This command starts a development environment that allows you to actually being writing code and analyzing data. By default the command begins two processes:
+This command starts your scientific computing environment and allows you to begin writing code and analyzing data. By default the command begins two processes:
 
 1. A Jupyter Lab server
 2. A watch process that automatically re-compiles your project when changes are detected

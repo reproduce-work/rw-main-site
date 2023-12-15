@@ -7,13 +7,16 @@ reproduce.work is a framework for developing self-contained, self-documenting sc
 However, **reproduce.work is designed for use by *scientists*** and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple, intuitive framework that can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.
 
 
-### Install
+### Installation
 Check out the [Getting Started](/getting-started) page to learn how to use the reproduce.work framework.
 
 
-## Why containerization?
+### Why containerization?
+**And how is this different from existing efforts in open science?**
 
-Reproducibility is core to the philosophy and practice of science. However, as the credibility revolution in recent decades has shown, the practice of science has fallen woefully short of meeting even basic standards toward true and widespread reproducibility. By packaging the entire scientific environment --- software, dependencies, data, and manuscripts --- into containers, scientists can ensure that their experiments and analyses can be replicated exactly, irrespective of changes in underlying technology or platforms. This approach enhances the reliability of scientific findings and facilitates collobration --- both within research teams but also across the broader scientific community by allowing anyone, anywhere, anytime to build upon the work of others.
+Reproducibility is core to the philosophy and practice of science. However, as the credibility revolution in recent decades has shown, the practice of science has fallen woefully short of meeting even basic standards toward true and widespread reproducibility. The recent interest in *open* science has been a positive step toward improving the reproducibility of scientific research, but the open science movement has largely focused on the *transparency* of scientific research, rather than explicilty facilitating its *reproducibility*. Many of the tools and practices of open science --- open data, open code, pre-registration, etc. --- are important steps toward reproducibility, but they are not sufficient, as they require authors to provide detailed documentation and instructions to ensure that others can independently replicate their work. This work is often left undone and, even when it is, writing adequate documentation and troubleshooting cross-platform execution errors can be a time-consuming and error-prone process.
+
+By packaging the entire scientific environment --- software, dependencies, data, and manuscripts --- into containers, scientists can ensure that their experiments and analyses can be replicated exactly, irrespective of changes in underlying technology or platforms. This approach enhances the reliability of scientific findings and facilitates collaboration --- both within research teams but also across the broader scientific community by allowing anyone, anywhere, anytime to build upon the work of others.
 
 
 ## Current release
