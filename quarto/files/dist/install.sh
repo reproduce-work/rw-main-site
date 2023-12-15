@@ -24,7 +24,7 @@ echo "Choose an installation method:"
 echo "1. Install globally in existing PATH"
 echo "2. Create a new folder at ./rw-project and download for single project use"
 
-read -p "Enter the number corresponding to your choice: " choice
+read -p "Enter the number corresponding to your choice: " choice < /dev/tty
 
 case "$choice" in
   1)
