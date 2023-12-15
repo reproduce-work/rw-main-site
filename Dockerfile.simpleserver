@@ -1,0 +1,14 @@
+# Use a lightweight Python image as the base image
+FROM python:3.9-slim
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Expose port 8080
+EXPOSE 8080
+
+# Start a simple HTTP server
+CMD ["python", "-m", "http.server", "8080"]
+
+#docker build -t serve -f Dockerfile.simpleserver .
+#docker run -v $(pwd)/rendered:/app -d -p 8080:8080 serve
