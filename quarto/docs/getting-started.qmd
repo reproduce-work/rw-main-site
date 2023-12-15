@@ -80,10 +80,17 @@ reproduce/
 
 ### 2. Build: `rw build`
 
+After initializing a project, it must be "built" which is the process of downloading the software required for running executing your project and packaging it in a container. Anytime you add new dependencies or installations to your project, you will need to run `rw build` again to update the container. 
 
 
 ### 3. Develop: `rw develop`
 
+This command starts a development environment that allows you to actually being writing code and analyzing data. By default the command begins two processes:
+
+1. A Jupyter Lab server
+2. A watch process that automatically re-compiles your project when changes are detected
+
+If you are not actively writing your manuscript and do not need to compile your report, you can run `rw develop --watch=false` to start only the Jupyter Lab server.
 
 
 #### Note!
@@ -97,6 +104,7 @@ While in the development environment, you can install packages in one of two way
 - **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` and run `rw build` again. After "building" your dev environment, you can stop and restart it and your packages will be installed.
 
 - **Temporary**: While your dev environment is running, you can use `pip install <package_name>`; however keep in mind that packages installed this way will not persist across sessions (i.e. if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt`.
+
 
 
 

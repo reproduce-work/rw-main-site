@@ -8,8 +8,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: getting-started.qmd
+      - href: docs/getting-started.qmd
         text: Getting Started
+      - about.qmd
   sidebar:
     style: floating
 

@@ -10,5 +10,14 @@
   },
   "getting-started.qmd": {
     "getting-started.html": "cb20db50"
+  },
+  "docs/markdown-latex.qmd": {
+    "markdown-latex.html": "f33746e8"
+  },
+  "docs/getting-started.qmd": {
+    "getting-started.html": "cc47d85a"
+  },
+  "docs/Untitled-1.md": {
+    "Untitled-1.html": "0a6b9607"
   }
 }

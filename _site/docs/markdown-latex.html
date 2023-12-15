@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>reproduce.work - reproduce.work: containerization for scientists</title>
+<title>reproduce.work - Working with the markdown-latex document environment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +61,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">reproduce.work</span>
     </a>
   </div>
@@ -82,15 +82,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs/getting-started.html" rel="" target="">
+    <a class="nav-link" href="../docs/getting-started.html" rel="" target="">
  <span class="menu-text">Getting Started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">reproduce.work: containerization for scientists</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Working with the <code>markdown-latex</code> document environment</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -122,9 +122,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install</a></li>
-  <li><a href="#why-containerization" id="toc-why-containerization" class="nav-link" data-scroll-target="#why-containerization">Why containerization?</a></li>
-  <li><a href="#current-release" id="toc-current-release" class="nav-link" data-scroll-target="#current-release">Current release</a></li>
+  <li><a href="#insert-command" id="toc-insert-command" class="nav-link active" data-scroll-target="#insert-command">1. <code>INSERT</code> Command</a></li>
+  <li><a href="#link-command" id="toc-link-command" class="nav-link" data-scroll-target="#link-command">2. <code>LINK</code> Command</a></li>
+  <li><a href="#file-command" id="toc-file-command" class="nav-link" data-scroll-target="#file-command">3. <code>FILE</code> Command</a></li>
+  <li><a href="#badge-command" id="toc-badge-command" class="nav-link" data-scroll-target="#badge-command">4. <code>BADGE</code> Command</a></li>
+  <li><a href="#wrap-command" id="toc-wrap-command" class="nav-link" data-scroll-target="#wrap-command">5. <code>WRAP</code> Command</a></li>
   </ul>
 </nav>
     </div>
@@ -133,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">reproduce.work: containerization for scientists</h1>
+<h1 class="title">Working with the <code>markdown-latex</code> document environment</h1>
 </div>
 
 
@@ -148,25 +150,45 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>reproduce.work is a framework for developing self-contained, self-documenting scientific projects that facilitate computational reproducibility and data traceability. This project is based from the ground up on a paradigm from software engineering called <em>containerization</em>, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods.</p>
-<p>However, <strong>reproduce.work is designed for use by <em>scientists</em></strong> and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple, intuitive framework that can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.</p>
-<section id="install" class="level3">
-<h3 class="anchored" data-anchor-id="install">Install</h3>
-<p>Check out the <a href="./getting-started">Getting Started</a> page to learn how to use the reproduce.work framework.</p>
-</section>
-<section id="why-containerization" class="level2">
-<h2 class="anchored" data-anchor-id="why-containerization">Why containerization?</h2>
-<p>Reproducibility is core to the philosophy and practice of science. However, as the credibility revolution in recent decades has shown, the practice of science has fallen woefully short of meeting even basic standards toward true and widespread reproducibility. By packaging the entire scientific environment — software, dependencies, data, and manuscripts — into containers, scientists can ensure that their experiments and analyses can be replicated exactly, irrespective of changes in underlying technology or platforms. This approach enhances the reliability of scientific findings and facilitates collobration — both within research teams but also across the broader scientific community by allowing anyone, anywhere, anytime to build upon the work of others.</p>
-</section>
-<section id="current-release" class="level2">
-<h2 class="anchored" data-anchor-id="current-release">Current release</h2>
-<p>This project is currently in the alpha development phase and serves as proof of concept for further development. Current support is offered for the following stack:</p>
+<section id="insert-command" class="level3">
+<h3 class="anchored" data-anchor-id="insert-command">1. <code>INSERT</code> Command</h3>
 <ul>
-<li><em>Computing environment</em>: Jupyter (interactive Python)</li>
-<li><em>Document environment</em>: LaTeX</li>
-<li><em>Hosting environment</em>: GitHub</li>
+<li><strong>Syntax</strong>: <code>\INSERT{variable_name}</code></li>
+<li><strong>Description</strong>: This command is used to insert dynamic content into the document. The <code>variable_name</code> refers to a specific piece of data or value defined elsewhere, often in a TOML configuration file. When the document is processed, the <code>INSERT</code> command is replaced with the actual value of <code>variable_name</code>.</li>
+<li><strong>Use Case</strong>: Use <code>INSERT</code> to dynamically add data like dates, names, or any other variable content that might change or needs to be reused across different documents.</li>
 </ul>
-<p>The longer-term vision for reproduce.work is as a wrapper framework for the vast majority of scientific computing workflows. As such, it has been designed to accommodate other computing environments (vanilla Python, R, and RStudio, Stata, etc.), document environments (Microsoft Word, HTML), and hosting environments (GitLab, etc.) with future development.</p>
+</section>
+<section id="link-command" class="level3">
+<h3 class="anchored" data-anchor-id="link-command">2. <code>LINK</code> Command</h3>
+<ul>
+<li><strong>Syntax</strong>: <code>\LINK{variable_name}</code></li>
+<li><strong>Description</strong>: This command is functionally similar to the <code>\INSERT</code> command, in that it will dynamically insert the value of the <code>variable_name</code> from your published data, but it will also wrap that value in a hyperlink to the metadata associated with that variable in the <code>pubdata.toml</code> file. Once compiled, it turns into an actual clickable link in the document.</li>
+<li><strong>Use Case</strong>: Use <code>LINK</code> to embed hyperlinks seamlessly in your text, linking to external resources, references, or related documents without cluttering your markdown with URLs.</li>
+</ul>
+</section>
+<section id="file-command" class="level3">
+<h3 class="anchored" data-anchor-id="file-command">3. <code>FILE</code> Command</h3>
+<ul>
+<li><strong>Syntax</strong>: <code>\FILE{file_path}</code></li>
+<li><strong>Description</strong>: This command is used to reference or include external files in the document. <code>file_path</code> specifies the location of the file. During processing, the reproduce.work script copies the file into your LaTeX project and allows for you to reference it in your</li>
+<li><strong>Use Case</strong>: Use <code>FILE</code> when you need to include external resources like images, dynamically generated <code>.tex</code> files, or other data that is generated in the process of your research.</li>
+</ul>
+</section>
+<section id="badge-command" class="level3">
+<h3 class="anchored" data-anchor-id="badge-command">4. <code>BADGE</code> Command</h3>
+<ul>
+<li><strong>Syntax</strong>: <code>\BADGE{variable_name}</code></li>
+<li><strong>Description</strong>: This command is designed to insert a badge <code>source</code> <img>. The <code>variable_name</code> is used to fetch the badge’s image URL and other related metadata. This command typically generates a small image, often linked to an external source.</li>
+<li><strong>Use Case</strong>: Use <code>BADGE</code> to insert recognition badges, logos, or any small icons that provide quick visual information or branding to your document.</li>
+</ul>
+</section>
+<section id="wrap-command" class="level3">
+<h3 class="anchored" data-anchor-id="wrap-command">5. <code>WRAP</code> Command</h3>
+<ul>
+<li><strong>Syntax</strong>: <code>\WRAP{variable_name}</code></li>
+<li><strong>Description</strong>: The <code>WRAP</code> command is used to create a specially formatted section or a block in the document. It wraps the content specified by <code>variable_name</code> in additional formatting, potentially including links, badges, or other decorative elements.</li>
+<li><strong>Use Case</strong>: Use <code>WRAP</code> for highlighting or distinguishing certain sections of your document, such as quotes, special notes, or featured content, with additional styling or formatting.</li>
+</ul>
 
 
 </section>
