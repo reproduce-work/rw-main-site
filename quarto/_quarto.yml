@@ -24,7 +24,7 @@ website:
             text: Installation
           - href: docs/getting-started.qmd#basic-commands
             text: Basic Commands
-      - section: Scientific computing environments
+      - section: Scientific environments
         contents: 
           - href: docs/jupyter.qmd
             text: "`jupyter`"
