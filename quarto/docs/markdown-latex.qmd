@@ -20,7 +20,7 @@ title: "Working with the `markdown-latex` document environment"
 
 ### 4. `BADGE` Command
 - **Syntax**: `\BADGE{variable_name}`
-- **Description**: This command is designed to insert a badge `source` <img>. The `variable_name` is used to fetch the badge's image URL and other related metadata. This command typically generates a small image, often linked to an external source.
+- **Description**: This command is designed to insert a badge `source` <img src="/files/img/logo.svg" style="display: inline; height: 18px; position: relative; top: 2px;" />. The `variable_name` is used to fetch the badge's image URL and other related metadata. This command typically generates a small image, often linked to an external source.
 - **Use Case**: Use `BADGE` to insert recognition badges, logos, or any small icons that provide quick visual information or branding to your document.
 
 ### 5. `WRAP` Command

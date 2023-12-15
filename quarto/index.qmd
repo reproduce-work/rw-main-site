@@ -8,7 +8,19 @@ However, **reproduce.work is designed for use by *scientists*** and provides a s
 
 
 ### Installation
-Check out the [Getting Started](/getting-started) page to learn how to use the reproduce.work framework.
+Check out the [Getting Started](/getting-started) page to learn how to use the reproduce.work framework:
+
+<div>
+    <!-- Call to Action Button -->
+    <a href="/getting-started" class="cta-button">Get Started 🧑‍🔬</a>
+</div>
+
+
+## At a glance
+<div style="text-align:center;">
+    <img src="/files/img/nutshell.png" width="800px" />
+</div>
+
 
 
 ### Why containerization?

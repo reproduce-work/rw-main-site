@@ -16,7 +16,7 @@
     display: inline-block; /* To place it inline with the text */
     width: 45px; /* Width of the logo - Adjust as needed */
     height: 45px; /* Height of the logo - Adjust as needed */
-    background-image: url('files/img/logo.png'); /* Replace with your logo's URL */
+    background-image: url('files/img/logo.svg'); /* Replace with your logo's URL */
     background-size: contain; /* To ensure the logo fits within the dimensions specified */
     background-repeat: no-repeat; /* To ensure the logo doesn't repeat */
     margin-right: 5px; /* Some space between the logo and the title */
@@ -88,3 +88,22 @@
     opacity: 70%;
   }
   
+
+  .cta-button {
+    background-color: #11c781; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #119f69;
+}
