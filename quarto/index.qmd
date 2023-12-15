@@ -1,7 +1,31 @@
 ---
-title: "static-website"
+title: "reproduce.work: containerization for scientists"
 ---
 
-This is a Quarto website.
+reproduce.work is a framework for developing self-contained, self-documenting scientific projects that facilitate computational reproducibility and data traceability. This project is based from the ground up on a paradigm from software engineering called *containerization*, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+However, **reproduce.work is designed for use by *scientists*** and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple, intuitive framework that can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.
+
+
+### Install
+Check out the [Getting Started](/getting-started) page to learn how to use the reproduce.work framework.
+
+
+## Why containerization?
+
+Reproducibility is core to the philosophy and practice of science. However, as the credibility revolution in recent decades has shown, the practice of science has fallen woefully short of meeting even basic standards toward true and widespread reproducibility. By packaging the entire scientific environment --- software, dependencies, data, and manuscripts --- into containers, scientists can ensure that their experiments and analyses can be replicated exactly, irrespective of changes in underlying technology or platforms. This approach enhances the reliability of scientific findings and facilitates collobration --- both within research teams but also across the broader scientific community by allowing anyone, anywhere, anytime to build upon the work of others.
+
+
+## Current release
+
+This project is currently in the alpha development phase and serves as proof of concept for further development. Current support is offered for the following stack:
+
+- *Computing environment*: Jupyter (interactive Python)
+- *Document environment*: LaTeX
+- *Hosting environment*: GitHub
+    
+The longer-term vision for reproduce.work is as a wrapper framework for the vast majority of scientific computing workflows. As such, it has been designed to accommodate other computing environments (vanilla Python, R, and RStudio, Stata, etc.), document environments (Microsoft Word, HTML), and hosting environments (GitLab, etc.) with future development.
+
+
+
+

@@ -19,4 +19,6 @@ format:
     toc: true
 
 
-
+resource-files:
+  - files
+  - files/scripts/install.sh

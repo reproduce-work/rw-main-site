@@ -11,4 +11,4 @@ EXPOSE 8080
 CMD ["python", "-m", "http.server", "8080"]
 
 #docker build -t serve -f Dockerfile.simpleserver .
-#docker run -v $(pwd)/rendered:/app -d -p 8080:8080 serve
+#docker run -v $(pwd)/_site:/app -d -p 8080:8080 serve
