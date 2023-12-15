@@ -24,3 +24,4 @@ RUN gdebi --non-interactive quarto-linux-amd64.deb
 CMD ["bash"]
 
 #docker run -it -v $(pwd):/home/docker -w /home/docker quarto bash
+#docker run -v $(pwd):/home/docker -w /home/docker/quarto quarto bash -c "quarto render --output-dir /home/docker/_site"
