@@ -57,16 +57,42 @@ case "$choice" in
     ;;
 esac
 
-# Check if the user has write permissions to the chosen installation directory
-if [ ! -w "$INSTALL_DIR" ]; then
-  echo "Error: You do not have write permissions to $INSTALL_DIR."
-  echo "Run install command as `sudo` or choose a different method."
-  exit 1
+
+echo "Downloading..."
+
+# Download the CLI tool to a temporary file
+if ! curl -sSL "$CLI_URL" -o "rw.tmp"; then
+    echo "Error: Failed to download the CLI tool from $CLI_URL."
+    exit 1
 fi
 
-echo "Downloading and installing your CLI tool..."
-curl -sSL "$CLI_URL" -o "$INSTALL_DIR/rw"
-chmod +x "$INSTALL_DIR/rw"
+# Function to install the CLI tool
+install_cli() {
+    # Move and set execute permissions
+    if ! mv "rw.tmp" "$INSTALL_DIR/rw"; then
+        echo "Error: Failed to move the CLI tool to $INSTALL_DIR."
+        exit 1
+    fi
+    if ! chmod +x "$INSTALL_DIR/rw"; then
+        echo "Error: Failed to make the CLI tool executable."
+        exit 1
+    fi
+    echo "Installation complete. The CLI tool is installed in $INSTALL_DIR."
+}
+
+# Check if the user has write permissions to the installation directory
+if [ -w "$INSTALL_DIR" ]; then
+    install_cli
+else
+    echo "You need sudo access to install to $INSTALL_DIR; enter your password to continue or try installing again using the local installation method (option 2)."
+    if sudo -v; then
+        sudo bash -c "$(declare -f install_cli); INSTALL_DIR='$INSTALL_DIR'; install_cli"
+    else
+        echo "Error: Failed to obtain sudo access."
+        exit 1
+    fi
+fi
+
 echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
 
 

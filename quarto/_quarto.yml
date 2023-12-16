@@ -40,4 +40,5 @@ format:
     toc: true
 
 resource-files:
-  - files
+  - files/*
+  - files/dist/*
