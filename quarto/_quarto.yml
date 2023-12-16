@@ -41,4 +41,6 @@ format:
 
 resource-files:
   - files/*
-  - files/dist/*
+  - files/dist/install.sh
+  - files/dist/reproduce-work-macos
+  - files/dist/reproduce-work-linux

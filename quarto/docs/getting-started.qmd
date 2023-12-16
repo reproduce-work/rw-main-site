@@ -101,6 +101,6 @@ If you are not actively writing your manuscript and do not need to compile your 
 
 
 <!-- Invisible Link to Include the File in Build -->
-<a href="files/dist/reproduce-work-linux" style="font-size:0;">Invisible Link</a>
-<a href="files/dist/reproduce-work-macos" style="font-size:0;">Invisible Link</a>
-<a href="files/dist/install.sh" style="font-size:0;">Invisible Link</a>
+<a href="/files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a>
+<a href="/files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a>
+<a href="/files/dist/install.sh" style="display:none;">Invisible Link</a>
