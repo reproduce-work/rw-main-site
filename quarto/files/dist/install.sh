@@ -135,8 +135,8 @@ if [ "$choice" -eq 1 ]; then
   echo "You can now run reproduce.work directly from the command line."
   echo "Example: rw <command>"
 elif [ "$choice" -eq 2 ]; then
-  echo "You can now use reproduce.work from within the folder $(pwd)/$INSTALL_DIR."
+  echo "You can now use reproduce.work from within the folder $(dirname -- "$(pwd)/$INSTALL_DIR")/$(basename -- "$(pwd)/$INSTALL_DIR")."
   echo "Example usage:"
-  echo "    cd $(pwd)/$INSTALL_DIR"
-  echo "    rw <command>"
+  echo "    cd $(dirname -- "$(pwd)/$INSTALL_DIR")/$(basename -- "$(pwd)/$INSTALL_DIR")"
+  echo "    ./rw <command>"
 fi
