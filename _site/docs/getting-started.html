@@ -126,6 +126,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
         <li class="dropdown-header">Getting Started</li>
         <li>
+    <a class="dropdown-item" href="../docs/getting-started.html#pre-requisites" rel="" target="">
+ <span class="dropdown-text">Pre-requisites</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../docs/getting-started.html#installation" rel="" target="">
  <span class="dropdown-text">Installation</span></a>
   </li>  
@@ -133,20 +137,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../docs/getting-started.html#basic-commands" rel="" target="">
  <span class="dropdown-text">Basic Commands</span></a>
   </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Scientific environments</li>
-        <li>
-    <a class="dropdown-item" href="../docs/jupyter.html" rel="" target="">
- <span class="dropdown-text"><code>jupyter</code></span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Document environments</li>
-        <li>
-    <a class="dropdown-item" href="../docs/markdown-latex.html" rel="" target="">
- <span class="dropdown-text"><code>markdown-latex</code></span></a>
-  </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../faq.html" rel="" target="">
+ <span class="menu-text">FAQ</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
@@ -185,6 +181,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../docs/getting-started.html#pre-requisites" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-requisites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../docs/getting-started.html#installation" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Installation</span></a>
   </div>
@@ -193,40 +195,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../docs/getting-started.html#basic-commands" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic Commands</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Scientific environments</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/jupyter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>jupyter</code></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Document environments</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/markdown-latex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>markdown-latex</code></span></a>
   </div>
 </li>
       </ul>
@@ -247,8 +215,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#initialize-rw-init" id="toc-initialize-rw-init" class="nav-link" data-scroll-target="#initialize-rw-init">1. Initialize: <code>rw init</code></a></li>
   <li><a href="#build-rw-build" id="toc-build-rw-build" class="nav-link" data-scroll-target="#build-rw-build">2. Build: <code>rw build</code></a></li>
-  <li><a href="#develop-rw-develop" id="toc-develop-rw-develop" class="nav-link" data-scroll-target="#develop-rw-develop">3. Develop: <code>rw develop</code></a></li>
+  <li><a href="#develop-rw-launch" id="toc-develop-rw-launch" class="nav-link" data-scroll-target="#develop-rw-launch">3. Develop: <code>rw launch</code></a></li>
   </ul></li>
+  <li><a href="#installing-packages-and-dependencies" id="toc-installing-packages-and-dependencies" class="nav-link" data-scroll-target="#installing-packages-and-dependencies">Installing packages and dependencies</a></li>
   </ul>
 </nav>
     </div>
@@ -272,6 +241,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p style="color: #9753b8; font-weight: bold;">
+reproduce.work is being published as an alpha development release and should be considered experimental.
+</p>
 <section id="pre-requisites" class="level2">
 <h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
 <p><em>Knowledge</em>:</p>
@@ -281,49 +253,96 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><em>Software</em>:</p>
 <ul>
-<li><p>The reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install <a href="https://docs.docker.com/get-docker/">Docker</a> (or a suitable drop-in replacement such as <a href="https://orbstack.dev/">OrbStack</a>; recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine.</p></li>
-<li><p>While not required, it is also recommended that you install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a> and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.</p></li>
+<li>The reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install <a href="https://docs.docker.com/get-docker/">Docker</a> (or a suitable drop-in replacement such as <a href="https://orbstack.dev/">OrbStack</a>; recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine (which you can confirm by running <code>docker</code> in your preferred terminal).</li>
 </ul>
-<p>Note that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed <strong>inside a containerized environment</strong> automatically when you run the <code>rw build</code> command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine.</p>
+<!--- While not required, it is also recommended that you install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.-->
+<p>Besides the above, <em>no other software is required to use reproduce.work</em>. All other dependencies will be installed <strong>inside a containerized environment</strong> automatically when you run the <code>rw build</code> command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine.</p>
 </section>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>for buildializing new projects. It can be installed by running the following command:</p>
+<p>The reproduce.work command line interface can be installed with following shell command:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sSL</span> https://reproduce.work/install <span class="kw">|</span> <span class="fu">bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You will be prompted with two options:</p>
+<p>You will be prompted with two options:s</p>
 <ol type="1">
 <li>Install to your machine (in <code>/usr/local/bin</code>) for use anywhere in your command line</li>
-<li>Install to your current directory. This creates a folder in your current directory named <code>rw-project</code>; with this choice, the <code>rw</code> command line interface will only be available in that directory.</li>
+<li>Install to your current directory. This creates a folder in your current directory named <code>rw-project</code>; with this choice, the <code>rw</code> command line tools can only be executed at the root of your projec’t directory.</li>
 </ol>
 </section>
 <section id="basic-commands" class="level2">
 <h2 class="anchored" data-anchor-id="basic-commands">Basic Commands</h2>
 <p>There are THREE main commands in the reproduce.work workflow:</p>
 <ol type="1">
-<li><code>rw init</code>: buildialize a new project</li>
-<li><code>rw build</code>: develop your project; analyze data, publish results, write report</li>
-<li><code>rw develop</code>: run your project to reproduce results</li>
+<li><code>rw init</code>: initialize a new project</li>
+<li><code>rw build</code>: download dependencies and install/package them in a self-contained environment</li>
+<li><code>rw launch</code>: launch your project’s scientific environment and begin working</li>
 </ol>
 <section id="initialize-rw-init" class="level3">
 <h3 class="anchored" data-anchor-id="initialize-rw-init">1. Initialize: <code>rw init</code></h3>
 <p>By default, the <code>rw init</code> command will initialize a new project in your current directory. It is recommended that you create a new directory for each project, and run <code>rw init</code> from within that directory at the start of each project.</p>
+<p>Options:</p>
+<ul>
+<li><code>-s, --sci-env &lt;env&gt;</code>: Set the scientific environment.
+<ul>
+<li>The currently supported options are:
+<ul>
+<li><code>jupyter</code> (default)</li>
+<li><code>python</code></li>
+<li><code>rstudio</code></li>
+</ul></li>
+</ul></li>
+<li><code>-f, --force</code>: Force new configuration by overwriting existing <code>config.toml</code> file.</li>
+</ul>
+<p>The currently supported scientific environments are:</p>
+<ul>
+<li><code>jupyter</code> (default): Jupyter Notebook and Jupyter Lab</li>
+<li><code>python</code>: Base Python 3.11 installation</li>
+<li><code>rstudio</code>: RStudio (server), accessible via your browser</li>
+</ul>
+<section id="example-usage" class="level4">
+<h4 class="anchored" data-anchor-id="example-usage">Example usage:</h4>
+<p>Create a directory for your reproducible project:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new directory for your project</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_project</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_project</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a new project</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_project <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> my_project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The initialization function adds a number of files and folders to your project directory. The most important of these are:</p>
+<p>Depending on which scientific environment you are using, run one of the following initialization commands in your project’s directory:</p>
+</section>
+<section id="jupyter" class="level4">
+<h4 class="anchored" data-anchor-id="jupyter">Jupyter</h4>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># By default, project's initialize with --sci-env=jupyter</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="base-python" class="level4">
+<h4 class="anchored" data-anchor-id="base-python">Base Python</h4>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rstudio-server" class="level4">
+<h4 class="anchored" data-anchor-id="rstudio-server">RStudio Server</h4>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>rstudio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>After running this command, you should see several files and folders added to your project directory:</p>
 <div class="tree">
 <div class="block-title">
 <p>
@@ -335,32 +354,16 @@ Project directory structure
 <span class="folder">code/</span>
 <ul>
 <li>
-<span class="file">00_start.ipynb</span>
-</li>
-<li>
-<span class="file">requirements.txt</span>
+<span class="file">requirements.txt (or packages.R)</span>
 </li>
 </ul>
 </li>
-<li>
-<span class="folder">report/</span>
-<ul>
-<li>
-<span class="file">main.md</span>
-</li>
-<li>
-<span class="folder">latex/</span>
-</li>
-</ul>
-</li>
+
 <li>
 <span class="folder">reproduce/</span>
 <ul>
 <li>
 <span class="file">config.toml</span>
-</li>
-<li>
-<span class="file">pubdata.toml</span>
 </li>
 <li>
 <span class="file">Dockerfile</span>
@@ -373,23 +376,38 @@ Project directory structure
 </ul>
 </div>
 </section>
+</section>
 <section id="build-rw-build" class="level3">
 <h3 class="anchored" data-anchor-id="build-rw-build">2. Build: <code>rw build</code></h3>
-<p>After initializing a project, it must be “built” which is the process of downloading the software required for running executing your project and packaging it in a container. Anytime you add new dependencies or installations to your project, you will need to run <code>rw build</code> again to update the container.</p>
+<p>After initializing a project, it must be “built”. This is the process of downloading the software required for running your project and packaging it in a container.</p>
+<p>Options:</p>
+<ul>
+<li><code>--no-cache</code>: Download dependencies from the web without using locally cached versions. Default is <code>false</code>.</li>
+<li><code>-v, --verbose</code>: Prints to console the output of your project’s build process. Default is <code>false</code>.</li>
+</ul>
 </section>
-<section id="develop-rw-develop" class="level3">
-<h3 class="anchored" data-anchor-id="develop-rw-develop">3. Develop: <code>rw develop</code></h3>
-<p>This command starts your scientific computing environment and allows you to begin writing code and analyzing data. By default the command begins two processes:</p>
-<ol type="1">
-<li>A Jupyter Lab server</li>
-<li>A watch process that automatically re-compiles your project when changes are detected</li>
-</ol>
-<p>If you are not actively writing your manuscript and do not need to compile your report, you can run <code>rw develop --watch=false</code> to start only the Jupyter Lab server.</p>
+<section id="develop-rw-launch" class="level3">
+<h3 class="anchored" data-anchor-id="develop-rw-launch">3. Develop: <code>rw launch</code></h3>
+<p>This command starts your scientific computing environment and allows you to begin writing code and analyzing data.</p>
+<p>Options:</p>
+<ul>
+<li><code>-v, --verbose</code>: Prints to console the STDOUT/STDERR of your scientific environment. Default is <code>true</code>.</li>
+<li><code>-o, --open</code>: Opens the scientific environment in your default browser. Default is <code>false</code>.</li>
+<li><code>-p, --port &lt;port&gt;</code>: Set the local port for the jupyter server manually; otherwise, an open port will be found automatically.</li>
+</ul>
+</section>
+</section>
+<section id="installing-packages-and-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="installing-packages-and-dependencies">Installing packages and dependencies</h2>
+<p>While in the scientific development environment, you can install packages in one of two ways:</p>
+<ul>
+<li><p><strong>Persistent</strong>: Add your desired packages on separate lines to <code>code/requirements.txt</code> (or <code>code/packages.R</code>) and run <code>rw build</code> again. After “building” your scientific environment, you can stop and restart it and your packages will be installed.</p></li>
+<li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>pip install &lt;module&gt;</code> (or <code>install.packages(&lt;pkg&gt;)</code>); however keep in mind that modules/packages installed this way will not persist across sessions (i.e.&nbsp;if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to <code>code/requirements.txt</code> (or <code>code/packages.R</code>).</p></li>
+</ul>
 <!-- Invisible Link to Include the File in Build -->
-<p><a href="../files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a> <a href="../files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a> <a href="../files/dist/install.sh" style="display:none;">Invisible Link</a></p>
+<p><a href="../files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a> <a href="../files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a> <a href="../files/dist/install.sh" style="display:none;">Invisible Link</a> <a href="../files/media/rw1.mp4" style="display:none;">Invisible Link</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

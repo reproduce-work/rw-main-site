@@ -92,6 +92,10 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
         <li class="dropdown-header">Getting Started</li>
         <li>
+    <a class="dropdown-item" href="./docs/getting-started.html#pre-requisites" rel="" target="">
+ <span class="dropdown-text">Pre-requisites</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./docs/getting-started.html#installation" rel="" target="">
  <span class="dropdown-text">Installation</span></a>
   </li>  
@@ -99,20 +103,12 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./docs/getting-started.html#basic-commands" rel="" target="">
  <span class="dropdown-text">Basic Commands</span></a>
   </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Scientific environments</li>
-        <li>
-    <a class="dropdown-item" href="./docs/jupyter.html" rel="" target="">
- <span class="dropdown-text"><code>jupyter</code></span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Document environments</li>
-        <li>
-    <a class="dropdown-item" href="./docs/markdown-latex.html" rel="" target="">
- <span class="dropdown-text"><code>markdown-latex</code></span></a>
-  </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./faq.html" rel="" target="">
+ <span class="menu-text">FAQ</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
@@ -134,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#usage-installation" id="toc-usage-installation" class="nav-link active" data-scroll-target="#usage-installation">Usage &amp; Installation</a></li>
-  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link" data-scroll-target="#at-a-glance">At a glance</a></li>
   <li><a href="#current-release" id="toc-current-release" class="nav-link" data-scroll-target="#current-release">Current release</a></li>
+  <li><a href="#demonstration" id="toc-demonstration" class="nav-link" data-scroll-target="#demonstration">Demonstration</a></li>
   </ul>
 </nav>
     </div>
@@ -159,32 +155,68 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>reproduce.work is a framework for developing self-contained, self-documenting scientific projects that facilitate computational reproducibility and data traceability. This project is based from the ground up on a paradigm from software engineering called <em>containerization</em>, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods.</p>
-<p>However, <strong>reproduce.work is designed for use by <em>scientists</em></strong> and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple, intuitive framework that can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.</p>
+<p>reproduce.work is a framework for developing self-contained scientific projects that facilitate computational reproducibility. This project is based on a paradigm from software engineering called <em>containerization</em>, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods.</p>
+<p>However, <strong>reproduce.work is designed <em>by scientists for scientists</em></strong> and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple containerization interface for the most common scientific computing environments which can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.</p>
 <section id="usage-installation" class="level3">
 <h3 class="anchored" data-anchor-id="usage-installation">Usage &amp; Installation</h3>
-<p>reproduce.work can be used via a simple command-line interface that requires no interaction with the underlying containerization technology.</p>
+<p>After installing a container engine (i.e., <a href="https://docs.docker.com/get-docker/">Docker</a>) reproduce.work can be used via a simple command-line interface that requires no interaction with the underlying containerization technology.</p>
 <p>To learn more about how to use the framework, check out the <a href="./docs/getting-started">Getting Started</a> page:</p>
 <div style="text-align:center;">
 <!-- Call to Action Button -->
-<p><a href="./docs/getting-started" class="cta-button">Get Started 🧑‍🔬</a></p>
-</div>
-</section>
-<section id="at-a-glance" class="level2">
-<h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
-<div style="text-align:center; width: 150%; position: relative; right: 25%; z-index: 3;">
-<p><img src="./files/img/nutshell.png" style="width: 100%;"></p>
+<a href="./docs/getting-started">
+<p style="font-size: 1.5em;" class="cta-button">
+Get Started
+</p><p style="font-size: 1em;">
+(experimental release 🧑‍🔬)
+</p>
+<p></p>
+</a><p><a href="./docs/getting-started"></a></p>
 </div>
 </section>
 <section id="current-release" class="level2">
 <h2 class="anchored" data-anchor-id="current-release">Current release</h2>
-<p>This project is currently in the alpha development phase and serves as proof of concept for further development. Current support is offered for the following stack:</p>
-<ul>
-<li><em>Computing environment</em>: Jupyter (interactive Python)</li>
-<li><em>Document environment</em>: LaTeX</li>
-<li><em>Hosting environment</em>: GitHub</li>
-</ul>
-<p>The longer-term vision for reproduce.work is as a wrapper framework for the vast majority of scientific computing workflows. As such, it has been designed to accommodate other computing environments (vanilla Python, R, and RStudio, Stata, etc.), document environments (Microsoft Word, HTML), and hosting environments (GitLab, etc.) with future development.</p>
+<p>This project is currently in an alpha release phase and serves as proof of concept for further development. Current support is offered for the scientific environments:</p>
+<div class="logo-container">
+<div class="logo-item">
+<a href="./docs/getting-started.html#basic-commands"> <img src="./files/img/logos/jupyter.svg" class="logo-image">
+<div class="logo-text">
+<p>
+Jupyter
+</p><p>
+<code>rw init --sci-env=jupyter</code>
+</p></div>
+</a>
+</div>
+<div class="logo-item">
+<a href="./docs/getting-started.html#basic-commands"> <img src="./files/img/logos/python.png" class="logo-image">
+<div class="logo-text">
+<p>
+Python
+</p><p>
+<code>rw init --sci-env=python</code>
+</p></div>
+</a>
+</div>
+<div class="logo-item">
+<a href="./docs/getting-started.html#basic-commands"> <img src="./files/img/logos/rstudio.png" class="logo-image">
+<div class="logo-text">
+<p>
+RStudio
+</p><p>
+<code>rw init --sci-env=rstudio</code>
+</p></div>
+</a>
+</div>
+</div>
+<p>Support for other common environments, including Stata, Matlab, and Julia, will be possible with future development.</p>
+</section>
+<section id="demonstration" class="level2">
+<h2 class="anchored" data-anchor-id="demonstration">Demonstration</h2>
+<div class="video-container">
+<video autoplay="" loop="" muted="">
+<source src="/files/media/rw1.mp4" type="video/mp4">
+Your browser does not support the video tag. </video>
+</div>
 
 
 </section>

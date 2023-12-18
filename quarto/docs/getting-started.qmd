@@ -2,6 +2,9 @@
 title: "Getting started with reproduce.work"
 ---
 
+<p style="color: #9753b8; font-weight: bold;">reproduce.work is being published as an alpha development release and should be considered experimental.</p>
+
+
 ## Pre-requisites
 
 *Knowledge*: 
@@ -11,49 +14,86 @@ title: "Getting started with reproduce.work"
 
 *Software*: 
 
-- The reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install [Docker](https://docs.docker.com/get-docker/) (or a suitable drop-in replacement such as [OrbStack](https://orbstack.dev/); recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine.
+- The reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install [Docker](https://docs.docker.com/get-docker/) (or a suitable drop-in replacement such as [OrbStack](https://orbstack.dev/); recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine (which you can confirm by running `docker` in your preferred terminal).
 
-- While not required, it is also recommended that you install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.
+<!--- While not required, it is also recommended that you install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.-->
 
-Note that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed **inside a containerized environment** automatically when you run the `rw build` command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine.
+Besides the above, *no other software is required to use reproduce.work*. All other dependencies will be installed **inside a containerized environment** automatically when you run the `rw build` command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine.
 
 ## Installation
 
-for buildializing new projects. It can be installed by running the following command:
+The reproduce.work command line interface can be installed with following shell command:
 
 ``` {.bash filename="Terminal"}
 curl -sSL https://reproduce.work/install | bash
 ```
 
-You will be prompted with two options:
+You will be prompted with two options:s
 
 1. Install to your machine (in `/usr/local/bin`) for use anywhere in your command line
-2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line interface will only be available in that directory. 
+2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line tools can only be executed at the root of your projec't directory. 
 
 ## Basic Commands
 
 There are THREE main commands in the reproduce.work workflow:
 
-1. `rw init`: buildialize a new project
-2. `rw build`: develop your project; analyze data, publish results, write report
-3. `rw develop`: run your project to reproduce results
-
+1. `rw init`: initialize a new project
+2. `rw build`: download dependencies and install/package them in a self-contained environment
+3. `rw launch`: launch your project's scientific environment and begin working
 
 ### 1. Initialize: `rw init`
 
 By default, the `rw init` command will initialize a new project in your current directory. It is recommended that you create a new directory for each project, and run `rw init` from within that directory at the start of each project.
 
+Options:
+
+- `-s, --sci-env <env>`: Set the scientific environment.
+    - The currently supported options are:
+        - `jupyter` (default)
+        - `python`
+        - `rstudio`
+- `-f, --force`: Force new configuration by overwriting existing `config.toml` file.
+
+The currently supported scientific environments are:
+
+- `jupyter` (default): Jupyter Notebook and Jupyter Lab
+- `python`: Base Python 3.11 installation 
+- `rstudio`: RStudio (server), accessible via your browser
+
+
+#### Example usage:
+
+Create a directory for your reproducible project:
 
 ``` {.bash filename="Terminal"}
 # Create a new directory for your project
-mkdir my_project
-cd my_project
+mkdir my_project && cd my_project
+```
 
-# Initialize a new project
+Depending on which scientific environment you are using, run one of the following initialization commands in your project's directory:
+
+#### Jupyter
+
+``` {.bash filename="Terminal"}
+# By default, project's initialize with --sci-env=jupyter
 rw init 
 ```
 
-The initialization function adds a number of files and folders to your project directory. The most important of these are:
+#### Base Python
+
+``` {.bash filename="Terminal"}
+rw init --sci-env=python
+```
+
+#### RStudio Server
+
+``` {.bash filename="Terminal"}
+rw init --sci-env=rstudio
+```
+
+
+
+After running this command, you should see several files and folders added to your project directory:
 
 
 <div class="tree">
@@ -63,20 +103,13 @@ The initialization function adds a number of files and folders to your project d
 <ul>
 <li><span class="folder">code/</span>
 <ul>
-<li><span class="file">00_start.ipynb</span></li>
-<li><span class="file">requirements.txt</span></li>
+<li><span class="file">requirements.txt (or packages.R)</span></li>
 </ul>
 </li>
-<li><span class="folder">report/</span>
-<ul>
-<li><span class="file">main.md</span></li>
-<li><span class="folder">latex/</span></li>
-</ul>
 </li>
 <li><span class="folder">reproduce/</span>
 <ul>
 <li><span class="file">config.toml</span></li>
-<li><span class="file">pubdata.toml</span></li>
 <li><span class="file">Dockerfile</span></li>
 </ul>
 </li>
@@ -84,23 +117,39 @@ The initialization function adds a number of files and folders to your project d
 </ul>
 </div>
 
+
 ### 2. Build: `rw build`
 
-After initializing a project, it must be "built" which is the process of downloading the software required for running executing your project and packaging it in a container. Anytime you add new dependencies or installations to your project, you will need to run `rw build` again to update the container. 
+After initializing a project, it must be "built". This is the process of downloading the software required for running your project and packaging it in a container. 
+
+Options:
+
+- `--no-cache`: Download dependencies from the web without using locally cached versions. Default is `false`.
+- `-v, --verbose`: Prints to console the output of your project's build process. Default is `false`.
+
+### 3. Develop: `rw launch`
+
+This command starts your scientific computing environment and allows you to begin writing code and analyzing data.
+
+Options:
 
 
-### 3. Develop: `rw develop`
+- `-v, --verbose`: Prints to console the STDOUT/STDERR of your scientific environment. Default is `true`.
+- `-o, --open`: Opens the scientific environment in your default browser. Default is `false`.
+- `-p, --port <port>`: Set the local port for the jupyter server manually; otherwise, an open port will be found automatically.
 
-This command starts your scientific computing environment and allows you to begin writing code and analyzing data. By default the command begins two processes:
 
-1. A Jupyter Lab server
-2. A watch process that automatically re-compiles your project when changes are detected
+## Installing packages and dependencies
 
-If you are not actively writing your manuscript and do not need to compile your report, you can run `rw develop --watch=false` to start only the Jupyter Lab server.
+While in the scientific development environment, you can install packages in one of two ways:
 
+- **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` (or `code/packages.R`) and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
+
+- **Temporary**: While your dev environment is running, you can use `pip install <module>` (or `install.packages(<pkg>)`); however keep in mind that modules/packages installed this way will not persist across sessions (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt` (or `code/packages.R`).
 
 
 <!-- Invisible Link to Include the File in Build -->
 <a href="/files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a>
 <a href="/files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a>
 <a href="/files/dist/install.sh" style="display:none;">Invisible Link</a>
+<a href="/files/media/rw1.mp4" style="display:none;">Invisible Link</a>

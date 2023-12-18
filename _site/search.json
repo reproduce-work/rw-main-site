@@ -1,73 +1,38 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Frequently Asked Questions",
     "section": "",
-    "text": "The reproduce.work framework is being developed by Alex P. Miller, Assistant Professor of Marketing at the USC Marshall School of Business. It is currently a proof-of-concept prototype and is under active development. If you are interested in using the framework, contributing, or discussing its future, please reach out directly."
+    "text": "Recent interest in open science has been a positive step toward improving the reproducibility of scientific research, but the open science movement has largely focused on the transparency of scientific research, rather than explicilty facilitating its reproducibility. Many of the tools and practices of open science — open data, open code, pre-registration, etc. — are important steps toward reproducibility, but they are not sufficient, as they require authors to provide detailed documentation and instructions to ensure that others can independently replicate their work. This work is often left undone and, even when it is, writing adequate documentation and troubleshooting cross-platform execution errors can be a time-consuming and error-prone process."
   },
   {
-    "objectID": "about.html#creator",
-    "href": "about.html#creator",
-    "title": "About",
+    "objectID": "faq.html#what-is-the-long-term-vision-for-this-proejct",
+    "href": "faq.html#what-is-the-long-term-vision-for-this-proejct",
+    "title": "Frequently Asked Questions",
+    "section": "What is the long-term vision for this proejct?",
+    "text": "What is the long-term vision for this proejct?\nI have starting writing up a bigger vision for reproduce.work in a rough-draft manuscript, which can be found here.\nAs it currently stands, the reproduce.work CLI tool is essentially a simplified Docker interface for scientists. However, the potential applications of containerization technology go far beyond this, opening up possibilities for automating much of the existing work that falls under the umbrella of “open” science.\nFor example, if scientists were to conduct their analyses and author their manuscripts inside containerized environments, it would be trivial to not only reproduce their published reports from scratch, but it would also be possible to automatically verify that statistical results, figures, and data published in scientific manuscripts match exactly the output of their analysis code. This entirely removes the possibility for human transcription errors and can potentially mitigate (or at least significantly raise the costs of) certain types of fraud. However, the primary vision of this project is not to police bad actors, but rather to make the best scientists better by making it easier to document and share their work with others.\n\n\n\nThis is all possible with current containerization technologies, but will require more development and coordination to become a reality."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "reproduce.work: containerization for scientists",
     "section": "",
-    "text": "The reproduce.work framework is being developed by Alex P. Miller, Assistant Professor of Marketing at the USC Marshall School of Business. It is currently a proof-of-concept prototype and is under active development. If you are interested in using the framework, contributing, or discussing its future, please reach out directly."
+    "text": "reproduce.work is a framework for developing self-contained scientific projects that facilitate computational reproducibility. This project is based on a paradigm from software engineering called containerization, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods.\nHowever, reproduce.work is designed by scientists for scientists and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple containerization interface for the most common scientific computing environments which can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization."
   },
   {
-    "objectID": "about.html#why-containerization",
-    "href": "about.html#why-containerization",
-    "title": "About",
-    "section": "Why containerization?",
-    "text": "Why containerization?\nAnd how is this different from existing efforts in open science?\nReproducibility is core to the philosophy and practice of science. However, as the credibility revolution in recent years has shown, the practice of science has fallen woefully short of meeting even basic standards toward true and widespread reproducibility. The recent interest in open science has been a positive step toward improving the reproducibility of scientific research, but the open science movement has largely focused on the transparency of scientific research, rather than explicilty facilitating its reproducibility. Many of the tools and practices of open science — open data, open code, pre-registration, etc. — are important steps toward reproducibility, but they are not sufficient, as they require authors to provide detailed documentation and instructions to ensure that others can independently replicate their work. This work is often left undone and, even when it is, writing adequate documentation and troubleshooting cross-platform execution errors can be a time-consuming and error-prone process.\nBy packaging the entire scientific environment — software, dependencies, data, and manuscripts — into containers, scientists can ensure that their experiments and analyses can be replicated exactly, irrespective of changes in underlying technology or platforms. This approach enhances the reliability of scientific findings and facilitates collaboration — both within research teams but also across the broader scientific community by allowing anyone, anywhere, anytime to build upon the work of others."
+    "objectID": "index.html#current-release",
+    "href": "index.html#current-release",
+    "title": "reproduce.work: containerization for scientists",
+    "section": "Current release",
+    "text": "Current release\nThis project is currently in an alpha release phase and serves as proof of concept for further development. Current support is offered for the scientific environments:\n\n\n \n\n\nJupyter\n\nrw init --sci-env=jupyter\n\n\n\n\n \n\n\nPython\n\nrw init --sci-env=python\n\n\n\n\n \n\n\nRStudio\n\nrw init --sci-env=rstudio\n\n\n\n\nSupport for other common environments, including Stata, Matlab, and Julia, will be possible with future development."
   },
   {
-    "objectID": "docs/getting-started.html",
-    "href": "docs/getting-started.html",
-    "title": "Getting started with reproduce.work",
-    "section": "",
-    "text": "Knowledge:\n\nUsers are expected to have basic familiarity with the command line interface (CLI) of their operating system. The following instructions are for users of Linux and macOS. Windows users should install Windows Subsystem for Linux and follow the instructions for Linux users.\nFurther, since the current version only offers support for Jupyter, LaTeX, and GitHub, users should also have basic familiarity with these tools. Support for more frameworks will be possible with future releases.\n\nSoftware:\n\nThe reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install Docker (or a suitable drop-in replacement such as OrbStack; recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine.\nWhile not required, it is also recommended that you install Git and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.\n\nNote that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed inside a containerized environment automatically when you run the rw build command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine."
-  },
-  {
-    "objectID": "docs/getting-started.html#pre-requisites",
-    "href": "docs/getting-started.html#pre-requisites",
-    "title": "Getting started with reproduce.work",
-    "section": "",
-    "text": "Knowledge:\n\nUsers are expected to have basic familiarity with the command line interface (CLI) of their operating system. The following instructions are for users of Linux and macOS. Windows users should install Windows Subsystem for Linux and follow the instructions for Linux users.\nFurther, since the current version only offers support for Jupyter, LaTeX, and GitHub, users should also have basic familiarity with these tools. Support for more frameworks will be possible with future releases.\n\nSoftware:\n\nThe reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install Docker (or a suitable drop-in replacement such as OrbStack; recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine.\nWhile not required, it is also recommended that you install Git and publish your reproducible projects to GitHub, as this will allow you to easily share your work openly with others and take advantage of the full suite of features offered by reproduce.work.\n\nNote that besides the above, no other software is required to use reproduce.work. All other dependencies will be installed inside a containerized environment automatically when you run the rw build command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine."
-  },
-  {
-    "objectID": "docs/getting-started.html#installation",
-    "href": "docs/getting-started.html#installation",
-    "title": "Getting started with reproduce.work",
-    "section": "Installation",
-    "text": "Installation\nfor buildializing new projects. It can be installed by running the following command:\n\n\nTerminal\n\ncurl -sSL https://reproduce.work/install | bash\n\nYou will be prompted with two options:\n\nInstall to your machine (in /usr/local/bin) for use anywhere in your command line\nInstall to your current directory. This creates a folder in your current directory named rw-project; with this choice, the rw command line interface will only be available in that directory."
-  },
-  {
-    "objectID": "docs/getting-started.html#basic-commands",
-    "href": "docs/getting-started.html#basic-commands",
-    "title": "Getting started with reproduce.work",
-    "section": "Basic Commands",
-    "text": "Basic Commands\nThere are THREE main commands in the reproduce.work workflow:\n\nrw init: buildialize a new project\nrw build: develop your project; analyze data, publish results, write report\nrw develop: run your project to reproduce results\n\n\n1. Initialize: rw init\nBy default, the rw init command will initialize a new project in your current directory. It is recommended that you create a new directory for each project, and run rw init from within that directory at the start of each project.\n\n\nTerminal\n\n# Create a new directory for your project\nmkdir my_project\ncd my_project\n\n# Initialize a new project\nrw init \n\nThe initialization function adds a number of files and folders to your project directory. The most important of these are:\n\n\n\nProject directory structure\n\n\n\n\ncode/\n\n\n00_start.ipynb\n\n\nrequirements.txt\n\n\n\n\nreport/\n\n\nmain.md\n\n\nlatex/\n\n\n\n\nreproduce/\n\n\nconfig.toml\n\n\npubdata.toml\n\n\nDockerfile\n\n\n\n\n.gitignore\n\n\n\n\n\n2. Build: rw build\nAfter initializing a project, it must be “built” which is the process of downloading the software required for running executing your project and packaging it in a container. Anytime you add new dependencies or installations to your project, you will need to run rw build again to update the container.\n\n\n3. Develop: rw develop\nThis command starts your scientific computing environment and allows you to begin writing code and analyzing data. By default the command begins two processes:\n\nA Jupyter Lab server\nA watch process that automatically re-compiles your project when changes are detected\n\nIf you are not actively writing your manuscript and do not need to compile your report, you can run rw develop --watch=false to start only the Jupyter Lab server.\n\nInvisible Link Invisible Link Invisible Link"
-  },
-  {
-    "objectID": "docs/jupyter.html",
-    "href": "docs/jupyter.html",
-    "title": "The jupyter scientific computing environment",
-    "section": "",
-    "text": "While in the development environment, you can install packages in one of two ways:\n\nPersistent: Add your desired packages on separate lines to code/requirements.txt and run rw build again. After “building” your dev environment, you can stop and restart it and your packages will be installed.\nTemporary: While your dev environment is running, you can use pip install &lt;package_name&gt;; however keep in mind that packages installed this way will not persist across sessions (i.e. if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to code/requirements.txt."
-  },
-  {
-    "objectID": "docs/jupyter.html#installing-packages",
-    "href": "docs/jupyter.html#installing-packages",
-    "title": "The jupyter scientific computing environment",
-    "section": "",
-    "text": "While in the development environment, you can install packages in one of two ways:\n\nPersistent: Add your desired packages on separate lines to code/requirements.txt and run rw build again. After “building” your dev environment, you can stop and restart it and your packages will be installed.\nTemporary: While your dev environment is running, you can use pip install &lt;package_name&gt;; however keep in mind that packages installed this way will not persist across sessions (i.e. if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to code/requirements.txt."
-  },
-  {
-    "objectID": "docs/jupyter.html#publishing-data",
-    "href": "docs/jupyter.html#publishing-data",
-    "title": "The jupyter scientific computing environment",
-    "section": "Publishing data",
-    "text": "Publishing data\n\nNote!\nDue to idiosyncrasies within the Jupyter ecosystem, when using publish_data or publish_file, you must first run register_notebook('code/&lt;path to current notebook&gt;.ipynb'). If you have multiple notebooks open simultaneously, keep in mind that only the most recently registered notebook will be used as the generating script for any data published with the methods below.\n\n\npublish_data\n\n\npublish_file"
+    "objectID": "index.html#demonstration",
+    "href": "index.html#demonstration",
+    "title": "reproduce.work: containerization for scientists",
+    "section": "Demonstration",
+    "text": "Demonstration\n\n\n\nYour browser does not support the video tag."
   },
   {
     "objectID": "docs/markdown-latex.html",
@@ -91,24 +56,73 @@
     "text": "Commands\n\nINSERT\n\nSyntax: \\INSERT{variable_name}\nDescription: This command is used to insert dynamic content into the document. The variable_name refers to a specific piece of data or value defined elsewhere, often in a TOML configuration file. When the document is processed, the INSERT command is replaced with the actual value of variable_name.\nUse Case: Use INSERT to dynamically add data like dates, names, or any other variable content that might change or needs to be reused across different documents.\n\n\n\nLINK\n\nSyntax: \\LINK{variable_name}\nDescription: This command is functionally similar to the \\INSERT command, in that it will dynamically insert the value of the variable_name from your published data, but it will also wrap that value in a hyperlink to the metadata associated with that variable in the pubdata.toml file. Once compiled, it turns into an actual clickable link in the document.\nUse Case: Use LINK to embed hyperlinks seamlessly in your text, linking to external resources, references, or related documents without cluttering your markdown with URLs.\n\n\n\nFILE\n\nSyntax: \\FILE{file_path}\nDescription: This command is used to reference or include external files in the document. file_path specifies the location of the file. During processing, the reproduce.work script copies the file into your LaTeX project and allows for you to reference it in your\nUse Case: Use FILE when you need to include external resources like images, dynamically generated .tex files, or other data that is generated in the process of your research.\n\n\n\nBADGE\n\nSyntax: \\BADGE{variable_name}\nDescription: This command is inserts a badge — source  — that links directly . The variable_name is used to fetch the badge’s image URL and other related metadata. This command typically generates a small image, often linked to an external source.\nUse Case: Place a BADGE next to or below tables and figures to reference the data/code used to generate them.\n\n\n\nWRAP\n\nSyntax: \\WRAP{variable_name}\nDescription: This command is similar to the BADGE command, but rather than merely inserting the badge in place, it wraps the data referenced by variable_name in a table environment and places the badge below the dynamically inserted content.\nUse Case: WRAP is most suitable for dynamically generated tables."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "reproduce.work: containerization for scientists",
+    "objectID": "docs/jupyter.html",
+    "href": "docs/jupyter.html",
+    "title": "The jupyter scientific computing environment",
     "section": "",
-    "text": "reproduce.work is a framework for developing self-contained, self-documenting scientific projects that facilitate computational reproducibility and data traceability. This project is based from the ground up on a paradigm from software engineering called containerization, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods.\nHowever, reproduce.work is designed for use by scientists and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple, intuitive framework that can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization."
+    "text": "While in the development environment, you can install packages in one of two ways:\n\nPersistent: Add your desired packages on separate lines to code/requirements.txt and run rw build again. After “building” your dev environment, you can stop and restart it and your packages will be installed.\nTemporary: While your dev environment is running, you can use pip install &lt;package_name&gt;; however keep in mind that packages installed this way will not persist across sessions (i.e. if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to code/requirements.txt."
   },
   {
-    "objectID": "index.html#at-a-glance",
-    "href": "index.html#at-a-glance",
-    "title": "reproduce.work: containerization for scientists",
-    "section": "At a glance",
-    "text": "At a glance"
+    "objectID": "docs/jupyter.html#installing-packages",
+    "href": "docs/jupyter.html#installing-packages",
+    "title": "The jupyter scientific computing environment",
+    "section": "",
+    "text": "While in the development environment, you can install packages in one of two ways:\n\nPersistent: Add your desired packages on separate lines to code/requirements.txt and run rw build again. After “building” your dev environment, you can stop and restart it and your packages will be installed.\nTemporary: While your dev environment is running, you can use pip install &lt;package_name&gt;; however keep in mind that packages installed this way will not persist across sessions (i.e. if you stop and restart your dev environment, you will need to reinstall them). This is suitable for development/testing, but packages that are core to your project should be added to code/requirements.txt."
   },
   {
-    "objectID": "index.html#current-release",
-    "href": "index.html#current-release",
-    "title": "reproduce.work: containerization for scientists",
-    "section": "Current release",
-    "text": "Current release\nThis project is currently in the alpha development phase and serves as proof of concept for further development. Current support is offered for the following stack:\n\nComputing environment: Jupyter (interactive Python)\nDocument environment: LaTeX\nHosting environment: GitHub\n\nThe longer-term vision for reproduce.work is as a wrapper framework for the vast majority of scientific computing workflows. As such, it has been designed to accommodate other computing environments (vanilla Python, R, and RStudio, Stata, etc.), document environments (Microsoft Word, HTML), and hosting environments (GitLab, etc.) with future development."
+    "objectID": "docs/jupyter.html#publishing-data",
+    "href": "docs/jupyter.html#publishing-data",
+    "title": "The jupyter scientific computing environment",
+    "section": "Publishing data",
+    "text": "Publishing data\n\nNote!\nDue to idiosyncrasies within the Jupyter ecosystem, when using publish_data or publish_file, you must first run register_notebook('code/&lt;path to current notebook&gt;.ipynb'). If you have multiple notebooks open simultaneously, keep in mind that only the most recently registered notebook will be used as the generating script for any data published with the methods below.\n\n\npublish_data\n\n\npublish_file"
+  },
+  {
+    "objectID": "docs/getting-started.html",
+    "href": "docs/getting-started.html",
+    "title": "Getting started with reproduce.work",
+    "section": "",
+    "text": "reproduce.work is being published as an alpha development release and should be considered experimental."
+  },
+  {
+    "objectID": "docs/getting-started.html#pre-requisites",
+    "href": "docs/getting-started.html#pre-requisites",
+    "title": "Getting started with reproduce.work",
+    "section": "Pre-requisites",
+    "text": "Pre-requisites\nKnowledge:\n\nUsers are expected to have basic familiarity with the command line interface (CLI) of their operating system. The following instructions are for users of Linux and macOS. Windows users should install Windows Subsystem for Linux and follow the instructions for Linux users.\nFurther, since the current version only offers support for Jupyter, LaTeX, and GitHub, users should also have basic familiarity with these tools. Support for more frameworks will be possible with future releases.\n\nSoftware:\n\nThe reproduce.work ecosystem relies on containerization to facilitate cross-platform computing; as such, it is required that you install Docker (or a suitable drop-in replacement such as OrbStack; recommended for Apple Silicon machines). You do not need deep familiarity with Docker or containerization to use reproduce.work, but you will need to install Docker and ensure that it is running on your machine (which you can confirm by running docker in your preferred terminal).\n\n\nBesides the above, no other software is required to use reproduce.work. All other dependencies will be installed inside a containerized environment automatically when you run the rw build command. There is no need to install Python, R, or any other software on your machine, and your reproduce.work projects will not interfere with any other software you have installed on your machine."
+  },
+  {
+    "objectID": "docs/getting-started.html#installation",
+    "href": "docs/getting-started.html#installation",
+    "title": "Getting started with reproduce.work",
+    "section": "Installation",
+    "text": "Installation\nThe reproduce.work command line interface can be installed with following shell command:\n\n\nTerminal\n\ncurl -sSL https://reproduce.work/install | bash\n\nYou will be prompted with two options:s\n\nInstall to your machine (in /usr/local/bin) for use anywhere in your command line\nInstall to your current directory. This creates a folder in your current directory named rw-project; with this choice, the rw command line tools can only be executed at the root of your projec’t directory."
+  },
+  {
+    "objectID": "docs/getting-started.html#basic-commands",
+    "href": "docs/getting-started.html#basic-commands",
+    "title": "Getting started with reproduce.work",
+    "section": "Basic Commands",
+    "text": "Basic Commands\nThere are THREE main commands in the reproduce.work workflow:\n\nrw init: initialize a new project\nrw build: download dependencies and install/package them in a self-contained environment\nrw launch: launch your project’s scientific environment and begin working\n\n\n1. Initialize: rw init\nBy default, the rw init command will initialize a new project in your current directory. It is recommended that you create a new directory for each project, and run rw init from within that directory at the start of each project.\nOptions:\n\n-s, --sci-env &lt;env&gt;: Set the scientific environment.\n\nThe currently supported options are:\n\njupyter (default)\npython\nrstudio\n\n\n-f, --force: Force new configuration by overwriting existing config.toml file.\n\nThe currently supported scientific environments are:\n\njupyter (default): Jupyter Notebook and Jupyter Lab\npython: Base Python 3.11 installation\nrstudio: RStudio (server), accessible via your browser\n\n\nExample usage:\nCreate a directory for your reproducible project:\n\n\nTerminal\n\n# Create a new directory for your project\nmkdir my_project && cd my_project\n\nDepending on which scientific environment you are using, run one of the following initialization commands in your project’s directory:\n\n\nJupyter\n\n\nTerminal\n\n# By default, project's initialize with --sci-env=jupyter\nrw init \n\n\n\nBase Python\n\n\nTerminal\n\nrw init --sci-env=python\n\n\n\nRStudio Server\n\n\nTerminal\n\nrw init --sci-env=rstudio\n\nAfter running this command, you should see several files and folders added to your project directory:\n\n\n\nProject directory structure\n\n\n\n\ncode/\n\n\nrequirements.txt (or packages.R)\n\n\n\n\n\nreproduce/\n\n\nconfig.toml\n\n\nDockerfile\n\n\n\n\n.gitignore\n\n\n\n\n\n\n2. Build: rw build\nAfter initializing a project, it must be “built”. This is the process of downloading the software required for running your project and packaging it in a container.\nOptions:\n\n--no-cache: Download dependencies from the web without using locally cached versions. Default is false.\n-v, --verbose: Prints to console the output of your project’s build process. Default is false.\n\n\n\n3. Develop: rw launch\nThis command starts your scientific computing environment and allows you to begin writing code and analyzing data.\nOptions:\n\n-v, --verbose: Prints to console the STDOUT/STDERR of your scientific environment. Default is true.\n-o, --open: Opens the scientific environment in your default browser. Default is false.\n-p, --port &lt;port&gt;: Set the local port for the jupyter server manually; otherwise, an open port will be found automatically."
+  },
+  {
+    "objectID": "docs/getting-started.html#installing-packages-and-dependencies",
+    "href": "docs/getting-started.html#installing-packages-and-dependencies",
+    "title": "Getting started with reproduce.work",
+    "section": "Installing packages and dependencies",
+    "text": "Installing packages and dependencies\nWhile in the scientific development environment, you can install packages in one of two ways:\n\nPersistent: Add your desired packages on separate lines to code/requirements.txt (or code/packages.R) and run rw build again. After “building” your scientific environment, you can stop and restart it and your packages will be installed.\nTemporary: While your dev environment is running, you can use pip install &lt;module&gt; (or install.packages(&lt;pkg&gt;)); however keep in mind that modules/packages installed this way will not persist across sessions (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to code/requirements.txt (or code/packages.R).\n\n\nInvisible Link Invisible Link Invisible Link Invisible Link"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The reproduce.work framework is a project by Alex P. Miller, Assistant Professor of Marketing at the USC Marshall School of Business. It is currently a proof-of-concept prototype and in alpha release."
+  },
+  {
+    "objectID": "about.html#reach-out",
+    "href": "about.html#reach-out",
+    "title": "About",
+    "section": "Reach out",
+    "text": "Reach out\nIf you are interested in using the framework, contributing, or discussing its future, please reach out directly."
   }
 ]

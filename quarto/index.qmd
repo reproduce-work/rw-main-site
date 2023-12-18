@@ -3,41 +3,68 @@ title: "reproduce.work: containerization for scientists"
 sidebar: false
 ---
 
-reproduce.work is a framework for developing self-contained, self-documenting scientific projects that facilitate computational reproducibility and data traceability. This project is based from the ground up on a paradigm from software engineering called *containerization*, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods. 
+reproduce.work is a framework for developing self-contained scientific projects that facilitate computational reproducibility. This project is based on a paradigm from software engineering called *containerization*, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods. 
 
-However, **reproduce.work is designed for use by *scientists*** and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple, intuitive framework that can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.
+However, **reproduce.work is designed *by scientists for scientists*** and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple containerization interface for the most common scientific computing environments which can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.
 
 
 ### Usage &amp; Installation
 
-reproduce.work can be used via a simple command-line interface that requires no interaction with the underlying containerization technology. 
+After installing a container engine (i.e., [Docker](https://docs.docker.com/get-docker/)) reproduce.work can be used via a simple command-line interface that requires no interaction with the underlying containerization technology. 
 
 To learn more about how to use the framework, check out the [Getting Started](/docs/getting-started) page:
 
 <div style="text-align:center;">
 <!-- Call to Action Button -->
-<a href="/docs/getting-started" class="cta-button">Get Started 🧑‍🔬</a>
+<a href="./docs/getting-started">
+<p style="font-size: 1.5em;" class="cta-button">
+Get Started
+<p style="font-size: 1em;">(experimental release 🧑‍🔬)</p>
+</p>
+</a>
 </div>
-
-
-## At a glance
-
-<div style="text-align:center; width: 150%; position: relative; right: 25%; z-index: 3;">
-<img src="/files/img/nutshell.png" style="width: 100%;" />
-</div>
-
-
 
 ## Current release
 
-This project is currently in the alpha development phase and serves as proof of concept for further development. Current support is offered for the following stack:
+This project is currently in an alpha release phase and serves as proof of concept for further development. Current support is offered for the scientific environments:
 
-- *Computing environment*: Jupyter (interactive Python)
-- *Document environment*: LaTeX
-- *Hosting environment*: GitHub
-    
-The longer-term vision for reproduce.work is as a wrapper framework for the vast majority of scientific computing workflows. As such, it has been designed to accommodate other computing environments (vanilla Python, R, and RStudio, Stata, etc.), document environments (Microsoft Word, HTML), and hosting environments (GitLab, etc.) with future development.
+<div class="logo-container">
+<div class="logo-item">
+<a href="/docs/getting-started.html#basic-commands">
+<img src="/files/img/logos/jupyter.svg" class="logo-image">
+<div class="logo-text">
+<p>Jupyter<p>
+`rw init --sci-env=jupyter`
+</div>
+</a>
+</div>
+<div class="logo-item">
+<a href="/docs/getting-started.html#basic-commands">
+<img src="/files/img/logos/python.png" class="logo-image">
+<div class="logo-text">
+<p>Python<p>
+`rw init --sci-env=python`
+</div>
+</a>
+</div>
+<div class="logo-item">
+<a href="/docs/getting-started.html#basic-commands">
+<img src="/files/img/logos/rstudio.png" class="logo-image">
+<div class="logo-text">
+<p>RStudio<p>
+`rw init --sci-env=rstudio`
+</div>
+</a>
+</div>
+</div>
 
+Support for other common environments, including Stata, Matlab, and Julia, will be possible with future development.
 
+## Demonstration
 
-
+<div class="video-container">
+<video autoplay loop muted>
+<source src="/files/media/rw1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>

@@ -22,5 +22,11 @@
   },
   "docs/jupyter.qmd": {
     "jupyter.html": "2988e868"
+  },
+  "docs/faq.qmd": {
+    "faq.html": "95a0d596"
+  },
+  "faq.qmd": {
+    "faq.html": "50201bea"
   }
 }

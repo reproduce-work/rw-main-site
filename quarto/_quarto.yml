@@ -9,6 +9,8 @@ website:
       - href: index.qmd
         text: Home
       - sidebar:docs
+      - href: faq.qmd
+        text: FAQ
       - about.qmd
       
 
@@ -20,18 +22,13 @@ website:
       contents:
       - section: Getting Started
         contents:
+          - href: docs/getting-started.qmd#pre-requisites
+            text: Pre-requisites
           - href: docs/getting-started.qmd#installation
             text: Installation
           - href: docs/getting-started.qmd#basic-commands
             text: Basic Commands
-      - section: Scientific environments
-        contents: 
-          - href: docs/jupyter.qmd
-            text: "`jupyter`"
-      - section: Document environments
-        contents: 
-          - href: docs/markdown-latex.qmd
-            text: "`markdown-latex`"
+      
 
 format:
   html:
@@ -44,3 +41,4 @@ resource-files:
   - files/dist/install.sh
   - files/dist/reproduce-work-macos
   - files/dist/reproduce-work-linux
+  - files/media/rw1.mp4
