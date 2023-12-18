@@ -5,8 +5,8 @@ set -e
 OS_TYPE="$(uname -s)"
 
 # Define the URLs for Linux and macOS executables
-CLI_URL_LINUX="https://reproduce.work/files/dist/reproduce-work-linux"
-CLI_URL_MACOS="https://reproduce.work/files/dist/reproduce-work-macos"
+CLI_URL_LINUX="https://github.com/reproduce-work/rw-main-site/releases/download/v0.0.1/reproduce-work-linux"
+CLI_URL_MACOS="https://github.com/reproduce-work/rw-main-site/releases/download/v0.0.1/reproduce-work-macos"
 
 
 # Determine the appropriate CLI URL based on the user's platform
