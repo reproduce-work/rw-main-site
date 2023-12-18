@@ -1,23 +1,42 @@
+## install.sh
 #!/bin/bash
 set -e
 
-# Determine the user's platform (Linux or macOS)
+# Determine the user's platform (Linux or macOS) and CPU architecture
 OS_TYPE="$(uname -s)"
+CPU_ARCH="$(uname -m)"
 
-# Define the URLs for Linux and macOS executables
-CLI_URL_LINUX="https://github.com/reproduce-work/rw-main-site/releases/download/v0.0.1/reproduce-work-linux"
-CLI_URL_MACOS="https://github.com/reproduce-work/rw-main-site/releases/download/v0.0.1/reproduce-work-macos"
+# Define the URLs for different architectures
+BASE_URL="https://github.com/reproduce-work/rw-main-site/releases/download/v0.0.1/"
+CLI_URL_LINUX_X64="${BASE_URL}reproduce-work-linux-x64"
+CLI_URL_LINUX_ARM64="${BASE_URL}reproduce-work-linux-arm64"
+CLI_URL_MACOS_X64="${BASE_URL}reproduce-work-macos-x64"
+CLI_URL_MACOS_ARM64="${BASE_URL}reproduce-work-macos-arm64"
 
-
-# Determine the appropriate CLI URL based on the user's platform
+# Determine the appropriate CLI URL based on the user's platform and architecture
 if [ "$OS_TYPE" == "Linux" ]; then
-  CLI_URL="$CLI_URL_LINUX"
+  if [ "$CPU_ARCH" == "x86_64" ]; then
+    CLI_URL="$CLI_URL_LINUX_X64"
+  elif [[ "$CPU_ARCH" == "arm64" || "$CPU_ARCH" == "aarch64" ]]; then
+    CLI_URL="$CLI_URL_LINUX_ARM64"
+  else
+    echo "Unsupported architecture: $CPU_ARCH. Exiting."
+    exit 1
+  fi
 elif [ "$OS_TYPE" == "Darwin" ]; then
-  CLI_URL="$CLI_URL_MACOS"
+  if [ "$CPU_ARCH" == "x86_64" ]; then
+    CLI_URL="$CLI_URL_MACOS_X64"
+  elif [ "$CPU_ARCH" == "arm64" ]; then
+    CLI_URL="$CLI_URL_MACOS_ARM64"
+  else
+    echo "Unsupported architecture: $CPU_ARCH. Exiting."
+    exit 1
+  fi
 else
-  echo "Unsupported platform: $OS_TYPE.  If on Windows, try using WSL."
+  echo "Unsupported platform: $OS_TYPE. If on Windows, try using WSL."
   exit 1
 fi
+
 
 # Determine the installation method based on user input
 echo "Choose an installation method:"
