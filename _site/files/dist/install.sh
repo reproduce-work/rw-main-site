@@ -1,6 +1,27 @@
 #!/bin/bash
 set -e
 
+# Initialize variables
+GLOBAL_INSTALL=false
+LOCAL_INSTALL=false
+
+# Parse flag arguments
+while getopts "gl" opt; do
+  case $opt in
+    g)
+      GLOBAL_INSTALL=true
+      ;;
+    l)
+      LOCAL_INSTALL=true
+      ;;
+    *)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+
 # Determine the user's platform (Linux or macOS) and CPU architecture
 OS_TYPE="$(uname -s)"
 CPU_ARCH="$(uname -m)"
@@ -37,43 +58,39 @@ else
 fi
 
 
-# Determine the installation method based on user input
-echo "Choose an installation method:"
-echo "1. Install globally in existing PATH"
-echo "2. Create a new folder at ./rw-project and download for single project use"
 
-read -p "Enter the number corresponding to your choice: " choice < /dev/tty
+# Determine the installation method
+if [ "$GLOBAL_INSTALL" = true ]; then
+  INSTALL_DIR="/usr/local/bin"
+elif [ "$LOCAL_INSTALL" = true ]; then
+  INSTALL_DIR="./rw-project"
+  # Create the directory if it doesn't exist
+  if [ ! -d "$INSTALL_DIR" ]; then
+    mkdir "$INSTALL_DIR"
+  fi
+else
+  echo "Choose an installation method:"
+  echo "1. Install globally in existing PATH"
+  echo "2. Create a new folder at ./rw-project and download for single project use"
+  read -p "Enter the number corresponding to your choice: " choice < /dev/tty
 
-case "$choice" in
-  1)
-    # Install in existing PATH
-    INSTALL_DIR="/usr/local/bin"
-    ;;
-  2)
-    # Download locally to the current directory
-    INSTALL_DIR="./rw-project"
-
-    # Create the directory if it doesn't exist
-    if [ ! -d "$INSTALL_DIR" ]; then
-      mkdir "$INSTALL_DIR"
-    fi
-
-    # If $INSTALL_DIR/rw already exists, prompt the user to overwrite
-    if [ -f "$INSTALL_DIR/rw" ]; then
-      read -p "rw already exists in $INSTALL_DIR. Overwrite? (y/n): " overwrite
-      if [ "$overwrite" == "y" ]; then
-        rm "$INSTALL_DIR/rw"
-      else
-        echo "Exiting."
-        exit 1
+  case "$choice" in
+    1)
+      INSTALL_DIR="/usr/local/bin"
+      ;;
+    2)
+      INSTALL_DIR="./rw-project"
+      # Create the directory if it doesn't exist
+      if [ ! -d "$INSTALL_DIR" ]; then
+        mkdir "$INSTALL_DIR"
       fi
-    fi
-    ;;
-  *)
-    echo "Invalid choice. Exiting."
-    exit 1
-    ;;
-esac
+      ;;
+    *)
+      echo "Invalid choice. Exiting."
+      exit 1
+      ;;
+  esac
+fi
 
 
 echo "Downloading..."
