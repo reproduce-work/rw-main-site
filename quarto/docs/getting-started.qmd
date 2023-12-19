@@ -31,7 +31,39 @@ curl -sSL https://reproduce.work/install | bash
 You will be prompted with two options:s
 
 1. Install to your machine (in `/usr/local/bin`) for use anywhere in your command line
-2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line tools can only be executed at the root of your projec't directory. 
+2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line tools can only be executed at the root of your project directory (and you may need to replace any `rw` command with `./rw`). 
+
+<details>
+<summary>Run with Docker</summary>
+In its current form, the reproduce.work CLI is designed to be a user-friendly interface for:
+ 
+- building and running common scientific container images, 
+- managing files and volume interactions with containers, and 
+- dealing with local port management. 
+
+These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. As such, outside of requiring a local installation, this tool does not assume that its users are familiar with Docker at all. 
+
+However, while the tool is in active development, its early adopters will likely have some familiarity with Docker. For such users, reproduce.work can be used as a set of developer tools to automate the handling of the tasks described above. The reproduce-work CLI has itself been developed with containerization in mind and can be used via its own Docker image without requiring direct installation of the reproduce.work binaries at all. 
+
+You can mount your current directory to the image and use the `rw` commands in interactive mode inside the container (with access to your machine's files at `$(pwd)`): 
+
+``` {.bash filename="Terminal"}
+docker run --rm -it -v $(pwd):/app ghcr.io/reproduce-work/rw-cli:0.0.1
+```
+
+You can also add an alias to your shell configuration as a shortcut to simulate a full installation via the tool's Docker image:
+
+``` {.bash filename=".shellrc"}
+alias rw='docker run -v $(pwd):/app ghcr.io/reproduce-work/rw-cli:0.0.1'
+```
+
+After running `source ~/.shellrc`, you can use the `rw` command as if it was installed on your machine:
+
+``` {.bash filename="Terminal"}
+rw --help
+```
+
+</details>
 
 ## Basic Commands
 

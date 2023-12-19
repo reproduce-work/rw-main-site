@@ -18,7 +18,7 @@ Further, due to the vagaries of software engineering, tools like Python virtual 
 
 ## What is the long-term vision for this proejct?
 
-I have starting writing up a bigger vision for reproduce.work in a rough-draft manuscript, [which can be found here](https://github.com/reproduce-work/reproduce-work/blob/main/report/report.pdf).
+I have starting writing up a bigger vision for reproduce.work in a rough-draft manuscript, [which can be found here](/files/media/rw-manuscript-alpha.pdf).
 
 As it currently stands, the reproduce.work CLI tool is essentially a simplified Docker interface for scientists. However, the potential applications of containerization technology go far beyond this, opening up possibilities for automating much of the existing work that falls under the umbrella of "open" science. 
 
