@@ -24,8 +24,8 @@ As it currently stands, the reproduce.work CLI tool is essentially a simplified 
 
 For example, if scientists were to conduct their analyses and author their manuscripts inside containerized environments, it would be trivial to not only reproduce their published reports from scratch, but it would also be possible to automatically verify that statistical results, figures, and data published in scientific manuscripts match exactly the output of their analysis code. This entirely removes the possibility for human transcription errors and can potentially mitigate (or at least significantly raise the costs of) certain types of fraud. However, the primary vision of this project is not to police bad actors, but rather to make the best scientists better by making it easier to document and share their work with others.
 
-<div style="text-align:center; width: 150%; position: relative; right: 25%; z-index: 3;">
-<img src="/files/img/nutshell.png" style="width: 100%;" />
+<div class="bleedover-image-wrapper">
+<img src="/files/img/nutshell.png" alt="Nutshell Image" />
 </div>
 
 This is all possible with current containerization technologies, but will require more development and coordination to become a reality. 

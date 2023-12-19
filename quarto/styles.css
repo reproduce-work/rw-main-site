@@ -226,3 +226,25 @@
 .file {
   color: #666;
 }
+
+
+/* Base styles for larger screens */
+.bleedover-image-wrapper {
+  text-align: center;
+  width: 150%;
+  position: relative;
+  right: 25%;
+  z-index: 3;
+}
+
+.bleedover-image-wrapper img {
+  width: 100%;
+}
+
+/* Media query for medium/small devices */
+@media screen and (max-width: 768px) {  /* Adjust 768px as needed for your medium/small breakpoint */
+  .bleedover-image-wrapper {
+      width: 100%;
+      right: 0;
+  }
+}

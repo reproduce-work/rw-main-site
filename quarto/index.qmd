@@ -3,9 +3,21 @@ title: "reproduce.work: containerization for scientists"
 sidebar: false
 ---
 
-reproduce.work is a framework for developing self-contained scientific projects that facilitate computational reproducibility. This project is based on a paradigm from software engineering called *containerization*, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods. 
 
-However, **reproduce.work is designed *by scientists for scientists*** and provides a simple framework that abstracts away from underlying complexities and technical details, providing a streamlined workflow for truly reproducible science. The current goal of the project is to lower the barrier to entry for reproducible science by providing a simple containerization interface for the most common scientific computing environments which can be used by scientists with minimal technical expertise. This allows scientists to focus on their research, rather than the technical details of containerization.
+*reproduce.work is designed to be the simplest and most user-friendly interface available for running the most common scientific computing workflows in a fully cross-platform manner.* 
+
+This project is based on a paradigm from software engineering called containerization, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods. 
+
+However, reproduce.work provides a simple framework that abstracts away from underlying complexities and technical details of containerization, providing a streamlined workflow for truly reproducible science. This allows scientists to focus on their research, rather than the technical details of containerization.
+
+
+
+<details>
+<summary>Explained in meme format</summary>
+<div class="bleedover-image-wrapper">
+<img src="/files/img/shoggoth.png" alt="reproduce.work represented as shoggoth meme" />
+</div>
+</details>
 
 
 ### Usage &amp; Installation
@@ -26,7 +38,7 @@ Get Started
 
 ## Current release
 
-This project is currently in an alpha release phase and serves as proof of concept for further development. Current support is offered for the scientific environments:
+This project is currently in an alpha release phase and serves as proof of concept for further development. Current support is offered for the following scientific environments:
 
 <div class="logo-container">
 <div class="logo-item">

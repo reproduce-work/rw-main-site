@@ -10,7 +10,6 @@ title: "Getting started with reproduce.work"
 *Knowledge*: 
 
 - Users are expected to have basic familiarity with the command line interface (CLI) of their operating system. The following instructions are for users of Linux and macOS. Windows users should install [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and follow the instructions for Linux users. 
-- Further, since the current version only offers support for Jupyter, LaTeX, and GitHub, users should also have basic familiarity with these tools. Support for more frameworks will be possible with future releases.
 
 *Software*: 
 
@@ -28,7 +27,7 @@ The reproduce.work command line interface can be installed with following shell 
 curl -sSL https://reproduce.work/install | bash
 ```
 
-You will be prompted with two options:s
+You will be prompted with two options:
 
 1. Install to your machine (in `/usr/local/bin`) for use anywhere in your command line
 2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line tools can only be executed at the root of your project directory (and you may need to replace any `rw` command with `./rw`). 
