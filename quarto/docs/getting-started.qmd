@@ -182,9 +182,9 @@ Options:
 
 While in the scientific development environment, you can install packages in one of two ways:
 
-- **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
+- **Persistent**: Add your desired packages on separate lines to `.reproduce/requirements.txt` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
 
-- **Temporary**: While your dev environment is running, you can use `pip install <module>`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt`.
+- **Temporary**: While your dev environment is running, you can use `pip install <module>`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `.reproduce/requirements.txt`.
 
 
 ## Base Python
@@ -240,9 +240,9 @@ Options:
 
 While in the scientific development environment, you can install packages in one of two ways:
 
-- **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
+- **Persistent**: Add your desired packages on separate lines to `.reproduce/requirements.txt` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
 
-- **Temporary**: While your dev environment is running, you can use `pip install <module>`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt`.
+- **Temporary**: While your dev environment is running, you can use `pip install <module>`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `.reproduce/requirements.txt`.
 
 
 
@@ -302,9 +302,9 @@ Options:
 
 While in the scientific development environment, you can install packages in one of two ways:
 
-- **Persistent**: Add your desired packages on separate lines to `code/packages.R` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
+- **Persistent**: Add your desired packages on separate lines to `.reproduce/packages.R` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
 
-- **Temporary**: While your dev environment is running, you can use `install.packages(<pkg>)`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/packages.R`.
+- **Temporary**: While your dev environment is running, you can use `install.packages(<pkg>)`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `.reproduce/packages.R`.
 
 
 
