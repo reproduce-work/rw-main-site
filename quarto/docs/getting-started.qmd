@@ -1,5 +1,8 @@
 ---
 title: "Getting started with reproduce.work"
+format: html
+includes:
+  after_body: sci-env-tabs.html
 ---
 
 
@@ -312,7 +315,6 @@ While in the scientific development environment, you can install packages in one
 
 
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Function to check if a URL parameter exists
@@ -330,11 +332,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check for each parameter and click the corresponding element
     if (hasParam('jupyter')) {
-        clickElement('#jupyter');
+        clickElement('#tabset-1-3-tab');
     } else if (hasParam('python')) {
-        clickElement('#python');
+        clickElement('#tabset-1-2-tab');
     } else if (hasParam('rstudio')) {
-        clickElement('#rstudio-server');
+        clickElement('#tabset-1-3-tab');
     }
 });
 </script>
