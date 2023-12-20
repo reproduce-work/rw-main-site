@@ -122,15 +122,17 @@ rw init
 ```
 </div>
 
+<!--
 <details>
 <summary>Video demonstration</summary>
 <div class="video-container">
 <video autoplay loop muted>
-<source src="http://reproduce.work/files/media/rw1.mp4" type="video/mp4">
+<source src="/files/media/rw1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 </div>
 </details>
+-->
 
 After running this command, you should see several files and folders added to your project directory:
 
@@ -315,6 +317,7 @@ While in the scientific development environment, you can install packages in one
 
 
 :::
+
 <!-- end of .panel-tabset environment -->
 
 

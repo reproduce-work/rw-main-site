@@ -215,24 +215,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#initialize-rw-init" id="toc-initialize-rw-init" class="nav-link" data-scroll-target="#initialize-rw-init">1. Initialize: <code>rw init</code></a></li>
   </ul></li>
-  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter">Jupyter</a>
-  <ul class="collapse">
-  <li><a href="#build-rw-build" id="toc-build-rw-build" class="nav-link" data-scroll-target="#build-rw-build">2. Build: <code>rw build</code></a></li>
-  <li><a href="#develop-rw-launch" id="toc-develop-rw-launch" class="nav-link" data-scroll-target="#develop-rw-launch">3. Develop: <code>rw launch</code></a></li>
-  <li><a href="#installing-packages-and-dependencies" id="toc-installing-packages-and-dependencies" class="nav-link" data-scroll-target="#installing-packages-and-dependencies">Installing packages and dependencies</a></li>
-  </ul></li>
-  <li><a href="#base-python" id="toc-base-python" class="nav-link" data-scroll-target="#base-python">Base Python</a>
-  <ul class="collapse">
-  <li><a href="#build-rw-build-1" id="toc-build-rw-build-1" class="nav-link" data-scroll-target="#build-rw-build-1">2. Build: <code>rw build</code></a></li>
-  <li><a href="#develop-rw-launch-1" id="toc-develop-rw-launch-1" class="nav-link" data-scroll-target="#develop-rw-launch-1">3. Develop: <code>rw launch</code></a></li>
-  <li><a href="#installing-packages-and-dependencies-1" id="toc-installing-packages-and-dependencies-1" class="nav-link" data-scroll-target="#installing-packages-and-dependencies-1">Installing packages and dependencies</a></li>
-  </ul></li>
-  <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">RStudio Server</a>
-  <ul class="collapse">
-  <li><a href="#build-rw-build-2" id="toc-build-rw-build-2" class="nav-link" data-scroll-target="#build-rw-build-2">2. Build: <code>rw build</code></a></li>
-  <li><a href="#develop-rw-launch-2" id="toc-develop-rw-launch-2" class="nav-link" data-scroll-target="#develop-rw-launch-2">3. Develop: <code>rw launch</code></a></li>
-  <li><a href="#installing-packages-and-dependencies-2" id="toc-installing-packages-and-dependencies-2" class="nav-link" data-scroll-target="#installing-packages-and-dependencies-2">Installing packages and dependencies</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -359,11 +341,10 @@ Run with Docker
 <li><code>-f, --force</code>: Force new configuration by overwriting existing <code>config.toml</code> file.</li>
 </ul>
 <p>Depending on which options you choose, the way you build and launch your scientific environment will vary:</p>
-<p>::: panel-tabset</p>
-</section>
-</section>
-<section id="jupyter" class="level2">
-<h2 class="anchored" data-anchor-id="jupyter">Jupyter</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Jupyter</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Base Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">RStudio Server</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="rw-init">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -373,16 +354,17 @@ Run with Docker
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<!--
 <details>
-<summary>
-Video demonstration
-</summary>
+<summary>Video demonstration</summary>
 <div class="video-container">
-<video autoplay="" loop="" muted="">
-<source src="http://reproduce.work/files/media/rw1.mp4" type="video/mp4">
-Your browser does not support the video tag. </video>
+<video autoplay loop muted>
+<source src="/files/media/rw1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
 </details>
+-->
 <p>After running this command, you should see several files and folders added to your project directory:</p>
 <div class="tree">
 <div class="block-title">
@@ -442,9 +424,8 @@ Project directory structure
 <li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>pip install &lt;module&gt;</code>; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e.&nbsp;if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to <code>code/requirements.txt</code>.</p></li>
 </ul>
 </section>
-</section>
-<section id="base-python" class="level2">
-<h2 class="anchored" data-anchor-id="base-python">Base Python</h2>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="rw-init">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -512,9 +493,8 @@ Project directory structure
 <li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>pip install &lt;module&gt;</code>; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e.&nbsp;if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to <code>code/requirements.txt</code>.</p></li>
 </ul>
 </section>
-</section>
-<section id="rstudio-server" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio-server">RStudio Server</h2>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="rw-init">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -581,7 +561,11 @@ Project directory structure
 <li><p><strong>Persistent</strong>: Add your desired packages on separate lines to <code>code/packages.R</code> and run <code>rw build</code> again. After “building” your scientific environment, you can stop and restart it and your packages will be installed.</p></li>
 <li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>install.packages(&lt;pkg&gt;)</code>; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e.&nbsp;if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to <code>code/packages.R</code>.</p></li>
 </ul>
-<p>::: <!-- end of .panel-tabset environment --></p>
+</section>
+</div>
+</div>
+</div>
+<!-- end of .panel-tabset environment -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Function to check if a URL parameter exists
