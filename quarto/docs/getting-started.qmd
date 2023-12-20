@@ -103,26 +103,14 @@ mkdir my_project && cd my_project
 
 Depending on which scientific environment you are using, run one of the following initialization commands in your project's directory:
 
-#### Jupyter
+::: panel-tabset
+
+## Jupyter
 
 ``` {.bash filename="Terminal"}
 # By default, project's initialize with --sci-env=jupyter
 rw init 
 ```
-
-#### Base Python
-
-``` {.bash filename="Terminal"}
-rw init --sci-env=python
-```
-
-#### RStudio Server
-
-``` {.bash filename="Terminal"}
-rw init --sci-env=rstudio
-```
-
-
 
 After running this command, you should see several files and folders added to your project directory:
 
@@ -134,7 +122,7 @@ After running this command, you should see several files and folders added to yo
 <ul>
 <li><span class="folder">code/</span>
 <ul>
-<li><span class="file">requirements.txt (or packages.R)</span></li>
+<li><span class="file">requirements.txt</span></li>
 </ul>
 </li>
 </li>
@@ -164,20 +152,148 @@ This command starts your scientific computing environment and allows you to begi
 
 Options:
 
-
-- `-v, --verbose`: Prints to console the STDOUT/STDERR of your scientific environment. Default is `true`.
 - `-o, --open`: Opens the scientific environment in your default browser. Default is `false`.
 - `-p, --port <port>`: Set the local port for the jupyter server manually; otherwise, an open port will be found automatically.
 
 
-## Installing packages and dependencies
+### Installing packages and dependencies
 
 While in the scientific development environment, you can install packages in one of two ways:
 
-- **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` (or `code/packages.R`) and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
+- **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
 
-- **Temporary**: While your dev environment is running, you can use `pip install <module>` (or `install.packages(<pkg>)`); however keep in mind that modules/packages installed this way will not persist across sessions (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt` (or `code/packages.R`).
+- **Temporary**: While your dev environment is running, you can use `pip install <module>`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt`.
 
+
+## Base Python
+
+``` {.bash filename="Terminal"}
+rw init --sci-env=python
+```
+
+
+After running this command, you should see several files and folders added to your project directory:
+
+
+<div class="tree">
+<div class="block-title">
+<p>Project directory structure</p>
+</div>
+<ul>
+<li><span class="folder">code/</span>
+<ul>
+<li><span class="file">requirements.txt</span></li>
+</ul>
+</li>
+</li>
+<li><span class="folder">reproduce/</span>
+<ul>
+<li><span class="file">config.toml</span></li>
+<li><span class="file">Dockerfile</span></li>
+</ul>
+</li>
+<li><span class="file">.gitignore</span></li>
+</ul>
+</div>
+
+
+### 2. Build: `rw build`
+
+After initializing a project, it must be "built". This is the process of downloading the software required for running your project and packaging it in a container. 
+
+Options:
+
+- `--no-cache`: Download dependencies from the web without using locally cached versions. Default is `false`.
+- `-v, --verbose`: Prints to console the output of your project's build process. Default is `false`.
+
+### 3. Develop: `rw launch`
+
+This command starts your scientific computing environment and allows you to begin writing code and analyzing data.
+
+Options:
+
+- `-o, --open`: Opens the scientific environment in your default browser. Default is `false`.
+- `-p, --port <port>`: Set the local port for the jupyter server manually; otherwise, an open port will be found automatically.
+
+
+### Installing packages and dependencies
+
+While in the scientific development environment, you can install packages in one of two ways:
+
+- **Persistent**: Add your desired packages on separate lines to `code/requirements.txt` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
+
+- **Temporary**: While your dev environment is running, you can use `pip install <module>`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/requirements.txt`.
+
+
+
+
+## RStudio Server
+
+``` {.bash filename="Terminal"}
+rw init --sci-env=rstudio
+```
+
+
+
+
+After running this command, you should see several files and folders added to your project directory:
+
+
+<div class="tree">
+<div class="block-title">
+<p>Project directory structure</p>
+</div>
+<ul>
+<li><span class="folder">code/</span>
+<ul>
+<li><span class="file">packages.R</span></li>
+</ul>
+</li>
+</li>
+<li><span class="folder">reproduce/</span>
+<ul>
+<li><span class="file">config.toml</span></li>
+<li><span class="file">Dockerfile</span></li>
+</ul>
+</li>
+<li><span class="file">.gitignore</span></li>
+</ul>
+</div>
+
+
+### 2. Build: `rw build`
+
+After initializing a project, it must be "built". This is the process of downloading the software required for running your project and packaging it in a container. 
+
+Options:
+
+- `--no-cache`: Download dependencies from the web without using locally cached versions. Default is `false`.
+- `-v, --verbose`: Prints to console the output of your project's build process. Default is `false`.
+
+### 3. Develop: `rw launch`
+
+This command starts your scientific computing environment and allows you to begin writing code and analyzing data.
+
+Options:
+
+- `-o, --open`: Opens the scientific environment in your default browser. Default is `false`.
+- `-p, --port <port>`: Set the local port for the jupyter server manually; otherwise, an open port will be found automatically.
+
+
+### Installing packages and dependencies
+
+While in the scientific development environment, you can install packages in one of two ways:
+
+- **Persistent**: Add your desired packages on separate lines to `code/packages.R` and run `rw build` again. After "building" your scientific environment, you can stop and restart it and your packages will be installed.
+
+- **Temporary**: While your dev environment is running, you can use `install.packages(<pkg>)`; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e. if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to `code/packages.R`.
+
+
+
+
+
+
+:::
 
 <!-- Invisible Link to Include the File in Build -->
 <a href="/files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a>

@@ -162,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 <summary>
 Explained in meme format
 </summary>
-<div class="bleedover-image-wrapper">
+<div id="shoggoth" class="bleedover-image-wrapper">
 <p><img src="./files/img/shoggoth.png" alt="reproduce.work represented as shoggoth meme"></p>
 </div>
 </details>
@@ -172,14 +172,14 @@ Explained in meme format
 <p>To learn more about how to use the framework, check out the <a href="./docs/getting-started">Getting Started</a> page:</p>
 <div style="text-align:center;">
 <!-- Call to Action Button -->
-<a href="./docs/getting-started">
+<a href="./docs/getting-started.html">
 <p style="font-size: 1.5em;" class="cta-button">
 Get Started
 </p><p style="font-size: 1em;">
 (experimental release 🧑‍🔬)
 </p>
 <p></p>
-</a><p><a href="./docs/getting-started"></a></p>
+</a><p><a href="./docs/getting-started.html"></a></p>
 </div>
 </section>
 <section id="current-release" class="level2">
@@ -221,6 +221,13 @@ RStudio
 </section>
 <section id="demonstration" class="level2">
 <h2 class="anchored" data-anchor-id="demonstration">Demonstration</h2>
+<p>Under the hood, reproduce.work is a Node-based command line executable that is designed to be a user-friendly interface for:</p>
+<ul>
+<li>building and running common scientific container images,</li>
+<li>managing files and volume interactions with containers, and</li>
+<li>dealing with local port management.</li>
+</ul>
+<p>These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. Outside of requiring a local installation, this tool does not assume that its users are familiar with containerization software at all, while simultaneously allowing scientists to build cross-platform compatible code minimal interruption to their existing computational workflows.</p>
 <div class="video-container">
 <video autoplay="" loop="" muted="">
 <source src="/files/media/rw1.mp4" type="video/mp4">

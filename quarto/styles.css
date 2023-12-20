@@ -241,10 +241,28 @@
   width: 100%;
 }
 
+@media screen and (max-width: 1350px) {
+  .bleedover-image-wrapper {
+    width: 120%;
+    right: 10%;
+  }
+
+}
+
 /* Media query for medium/small devices */
 @media screen and (max-width: 768px) {  /* Adjust 768px as needed for your medium/small breakpoint */
   .bleedover-image-wrapper {
       width: 100%;
       right: 0;
   }
+
+  #shoggoth.bleedover-image-wrapper {
+    width: 150%;
+    right: 5%;
+  }
+
+  #current-release .logo-text code {
+    font-size: 0.8em;
+  }
+
 }

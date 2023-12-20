@@ -14,7 +14,7 @@ However, reproduce.work provides a simple framework that abstracts away from und
 
 <details>
 <summary>Explained in meme format</summary>
-<div class="bleedover-image-wrapper">
+<div id="shoggoth" class="bleedover-image-wrapper">
 <img src="/files/img/shoggoth.png" alt="reproduce.work represented as shoggoth meme" />
 </div>
 </details>
@@ -28,13 +28,15 @@ To learn more about how to use the framework, check out the [Getting Started](/d
 
 <div style="text-align:center;">
 <!-- Call to Action Button -->
-<a href="./docs/getting-started">
+<a href="./docs/getting-started.html">
 <p style="font-size: 1.5em;" class="cta-button">
 Get Started
 <p style="font-size: 1em;">(experimental release 🧑‍🔬)</p>
 </p>
 </a>
 </div>
+
+
 
 ## Current release
 
@@ -73,6 +75,14 @@ This project is currently in an alpha release phase and serves as proof of conce
 Support for other common environments, including Stata, Matlab, and Julia, will be possible with future development.
 
 ## Demonstration
+
+Under the hood, reproduce.work is a Node-based command line executable that is designed to be a user-friendly interface for:
+ 
+- building and running common scientific container images, 
+- managing files and volume interactions with containers, and 
+- dealing with local port management. 
+
+These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. Outside of requiring a local installation, this tool does not assume that its users are familiar with containerization software at all, while simultaneously allowing scientists to build cross-platform compatible code minimal interruption to their existing computational workflows.  
 
 <div class="video-container">
 <video autoplay loop muted>
