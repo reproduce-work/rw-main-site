@@ -241,6 +241,33 @@
   width: 100%;
 }
 
+
+.panel-tabset .nav-item .nav-link {
+  color: #9753b8;
+}
+
+
+.panel-tabset .nav-item:hover .nav-link {
+  color: #119f69;
+}
+
+.panel-tabset .nav-item .nav-link.active {
+  background-color: #f7e8ff;
+  color:#9753b8; 
+}
+
+
+.rw-init {
+  padding: 20px 20px 10px 20px;
+  margin: -20px -20px 25px -20px;
+  background-color: #f7e8ff;
+}
+
+.rw-init .code-with-filename {
+  background-color: white;
+}
+
+
 @media screen and (max-width: 1350px) {
   .bleedover-image-wrapper {
     width: 120%;

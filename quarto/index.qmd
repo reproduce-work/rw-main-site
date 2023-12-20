@@ -44,7 +44,7 @@ This project is currently in an alpha release phase and serves as proof of conce
 
 <div class="logo-container">
 <div class="logo-item">
-<a href="/docs/getting-started.html#basic-commands">
+<a href="/docs/getting-started.html?jupyter#basic-commands">
 <img src="/files/img/logos/jupyter.svg" class="logo-image">
 <div class="logo-text">
 <p>Jupyter<p>
@@ -53,7 +53,7 @@ This project is currently in an alpha release phase and serves as proof of conce
 </a>
 </div>
 <div class="logo-item">
-<a href="/docs/getting-started.html#basic-commands">
+<a href="/docs/getting-started.html?python#basic-commands">
 <img src="/files/img/logos/python.png" class="logo-image">
 <div class="logo-text">
 <p>Python<p>
@@ -62,7 +62,7 @@ This project is currently in an alpha release phase and serves as proof of conce
 </a>
 </div>
 <div class="logo-item">
-<a href="/docs/getting-started.html#basic-commands">
+<a href="/docs/getting-started.html?rstudio#basic-commands">
 <img src="/files/img/logos/rstudio.png" class="logo-image">
 <div class="logo-text">
 <p>RStudio<p>
@@ -74,19 +74,13 @@ This project is currently in an alpha release phase and serves as proof of conce
 
 Support for other common environments, including Stata, Matlab, and Julia, will be possible with future development.
 
-## Demonstration
-
-Under the hood, reproduce.work is a Node-based command line executable that is designed to be a user-friendly interface for:
+<details>
+<summary>Under the hood</summary>
+In its current iteration, reproduce.work is a Node-based command line executable that is designed to be a user-friendly interface for:
  
 - building and running common scientific container images, 
 - managing files and volume interactions with containers, and 
 - dealing with local port management. 
 
-These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. Outside of requiring a local installation, this tool does not assume that its users are familiar with containerization software at all, while simultaneously allowing scientists to build cross-platform compatible code minimal interruption to their existing computational workflows.  
-
-<div class="video-container">
-<video autoplay loop muted>
-<source src="/files/media/rw1.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-</div>
+These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. Outside of requiring a local installation, this tool does not assume that its users are familiar with containerization software at all, while simultaneously allowing scientists to build cross-platform compatible code with minimal interruption to their existing computational workflows.  
+</details>

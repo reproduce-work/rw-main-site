@@ -131,7 +131,6 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#usage-installation" id="toc-usage-installation" class="nav-link active" data-scroll-target="#usage-installation">Usage &amp; Installation</a></li>
   <li><a href="#current-release" id="toc-current-release" class="nav-link" data-scroll-target="#current-release">Current release</a></li>
-  <li><a href="#demonstration" id="toc-demonstration" class="nav-link" data-scroll-target="#demonstration">Demonstration</a></li>
   </ul>
 </nav>
     </div>
@@ -187,7 +186,7 @@ Get Started
 <p>This project is currently in an alpha release phase and serves as proof of concept for further development. Current support is offered for the following scientific environments:</p>
 <div class="logo-container">
 <div class="logo-item">
-<a href="./docs/getting-started.html#basic-commands"> <img src="./files/img/logos/jupyter.svg" class="logo-image">
+<a href="./docs/getting-started.html?jupyter#basic-commands"> <img src="./files/img/logos/jupyter.svg" class="logo-image">
 <div class="logo-text">
 <p>
 Jupyter
@@ -197,7 +196,7 @@ Jupyter
 </a>
 </div>
 <div class="logo-item">
-<a href="./docs/getting-started.html#basic-commands"> <img src="./files/img/logos/python.png" class="logo-image">
+<a href="./docs/getting-started.html?python#basic-commands"> <img src="./files/img/logos/python.png" class="logo-image">
 <div class="logo-text">
 <p>
 Python
@@ -207,7 +206,7 @@ Python
 </a>
 </div>
 <div class="logo-item">
-<a href="./docs/getting-started.html#basic-commands"> <img src="./files/img/logos/rstudio.png" class="logo-image">
+<a href="./docs/getting-started.html?rstudio#basic-commands"> <img src="./files/img/logos/rstudio.png" class="logo-image">
 <div class="logo-text">
 <p>
 RStudio
@@ -218,21 +217,18 @@ RStudio
 </div>
 </div>
 <p>Support for other common environments, including Stata, Matlab, and Julia, will be possible with future development.</p>
-</section>
-<section id="demonstration" class="level2">
-<h2 class="anchored" data-anchor-id="demonstration">Demonstration</h2>
-<p>Under the hood, reproduce.work is a Node-based command line executable that is designed to be a user-friendly interface for:</p>
+<details>
+<summary>
+Under the hood
+</summary>
+<p>In its current iteration, reproduce.work is a Node-based command line executable that is designed to be a user-friendly interface for:</p>
 <ul>
 <li>building and running common scientific container images,</li>
 <li>managing files and volume interactions with containers, and</li>
 <li>dealing with local port management.</li>
 </ul>
-<p>These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. Outside of requiring a local installation, this tool does not assume that its users are familiar with containerization software at all, while simultaneously allowing scientists to build cross-platform compatible code minimal interruption to their existing computational workflows.</p>
-<div class="video-container">
-<video autoplay="" loop="" muted="">
-<source src="/files/media/rw1.mp4" type="video/mp4">
-Your browser does not support the video tag. </video>
-</div>
+These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. Outside of requiring a local installation, this tool does not assume that its users are familiar with containerization software at all, while simultaneously allowing scientists to build cross-platform compatible code with minimal interruption to their existing computational workflows.
+</details>
 
 
 </section>

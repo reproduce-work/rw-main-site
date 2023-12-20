@@ -215,6 +215,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#initialize-rw-init" id="toc-initialize-rw-init" class="nav-link" data-scroll-target="#initialize-rw-init">1. Initialize: <code>rw init</code></a></li>
   </ul></li>
+  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter">Jupyter</a>
+  <ul class="collapse">
+  <li><a href="#build-rw-build" id="toc-build-rw-build" class="nav-link" data-scroll-target="#build-rw-build">2. Build: <code>rw build</code></a></li>
+  <li><a href="#develop-rw-launch" id="toc-develop-rw-launch" class="nav-link" data-scroll-target="#develop-rw-launch">3. Develop: <code>rw launch</code></a></li>
+  <li><a href="#installing-packages-and-dependencies" id="toc-installing-packages-and-dependencies" class="nav-link" data-scroll-target="#installing-packages-and-dependencies">Installing packages and dependencies</a></li>
+  </ul></li>
+  <li><a href="#base-python" id="toc-base-python" class="nav-link" data-scroll-target="#base-python">Base Python</a>
+  <ul class="collapse">
+  <li><a href="#build-rw-build-1" id="toc-build-rw-build-1" class="nav-link" data-scroll-target="#build-rw-build-1">2. Build: <code>rw build</code></a></li>
+  <li><a href="#develop-rw-launch-1" id="toc-develop-rw-launch-1" class="nav-link" data-scroll-target="#develop-rw-launch-1">3. Develop: <code>rw launch</code></a></li>
+  <li><a href="#installing-packages-and-dependencies-1" id="toc-installing-packages-and-dependencies-1" class="nav-link" data-scroll-target="#installing-packages-and-dependencies-1">Installing packages and dependencies</a></li>
+  </ul></li>
+  <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">RStudio Server</a>
+  <ul class="collapse">
+  <li><a href="#build-rw-build-2" id="toc-build-rw-build-2" class="nav-link" data-scroll-target="#build-rw-build-2">2. Build: <code>rw build</code></a></li>
+  <li><a href="#develop-rw-launch-2" id="toc-develop-rw-launch-2" class="nav-link" data-scroll-target="#develop-rw-launch-2">3. Develop: <code>rw launch</code></a></li>
+  <li><a href="#installing-packages-and-dependencies-2" id="toc-installing-packages-and-dependencies-2" class="nav-link" data-scroll-target="#installing-packages-and-dependencies-2">Installing packages and dependencies</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -238,6 +256,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<!-- Invisible Link to Include the File in Build -->
+<p><a href="../files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a> <a href="../files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a> <a href="../files/dist/install.sh" style="display:none;">Invisible Link</a> <a href="../files/media/rw1.mp4" style="display:none;">Invisible Link</a></p>
 <p style="color: #9753b8; font-weight: bold;">
 reproduce.work is being published as an alpha development release and should be considered experimental.
 </p>
@@ -311,6 +331,17 @@ Run with Docker
 <li><code>rw build</code>: download dependencies and install/package them in a self-contained environment</li>
 <li><code>rw launch</code>: launch your project’s scientific environment and begin working</li>
 </ol>
+<section id="suggested-usage" class="level4">
+<h4 class="anchored" data-anchor-id="suggested-usage">Suggested usage:</h4>
+<p>Create a directory for your reproducible project:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new directory for your project</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_project <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> my_project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="initialize-rw-init" class="level3">
 <h3 class="anchored" data-anchor-id="initialize-rw-init">1. Initialize: <code>rw init</code></h3>
 <p>By default, the <code>rw init</code> command will initialize a new project in your current directory. It is recommended that you create a new directory for each project, and run <code>rw init</code> from within that directory at the start of each project.</p>
@@ -327,34 +358,31 @@ Run with Docker
 </ul></li>
 <li><code>-f, --force</code>: Force new configuration by overwriting existing <code>config.toml</code> file.</li>
 </ul>
-<p>The currently supported scientific environments are:</p>
-<ul>
-<li><code>jupyter</code> (default): Jupyter Notebook and Jupyter Lab</li>
-<li><code>python</code>: Base Python 3.11 installation</li>
-<li><code>rstudio</code>: RStudio (server), accessible via your browser</li>
-</ul>
-<section id="example-usage" class="level4">
-<h4 class="anchored">Example usage:</h4>
-<p>Create a directory for your reproducible project:</p>
+<p>Depending on which options you choose, the way you build and launch your scientific environment will vary:</p>
+<p>::: panel-tabset</p>
+</section>
+</section>
+<section id="jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="jupyter">Jupyter</h2>
+<div class="rw-init">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new directory for your project</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_project <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> my_project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Depending on which scientific environment you are using, run one of the following initialization commands in your project’s directory:</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Jupyter</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Base Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">RStudio Server</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Terminal</strong></pre>
-</div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># By default, project's initialize with --sci-env=jupyter</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --sci-env=jupyter by default</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+<details>
+<summary>
+Video demonstration
+</summary>
+<div class="video-container">
+<video autoplay="" loop="" muted="">
+<source src="http://reproduce.work/files/media/rw1.mp4" type="video/mp4">
+Your browser does not support the video tag. </video>
+</div>
+</details>
 <p>After running this command, you should see several files and folders added to your project directory:</p>
 <div class="tree">
 <div class="block-title">
@@ -414,13 +442,16 @@ Project directory structure
 <li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>pip install &lt;module&gt;</code>; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e.&nbsp;if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to <code>code/requirements.txt</code>.</p></li>
 </ul>
 </section>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+</section>
+<section id="base-python" class="level2">
+<h2 class="anchored" data-anchor-id="base-python">Base Python</h2>
+<div class="rw-init">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>After running this command, you should see several files and folders added to your project directory:</p>
 <div class="tree">
@@ -481,13 +512,16 @@ Project directory structure
 <li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>pip install &lt;module&gt;</code>; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e.&nbsp;if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to <code>code/requirements.txt</code>.</p></li>
 </ul>
 </section>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+</section>
+<section id="rstudio-server" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-server">RStudio Server</h2>
+<div class="rw-init">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>rstudio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>After running this command, you should see several files and folders added to your project directory:</p>
 <div class="tree">
@@ -547,15 +581,34 @@ Project directory structure
 <li><p><strong>Persistent</strong>: Add your desired packages on separate lines to <code>code/packages.R</code> and run <code>rw build</code> again. After “building” your scientific environment, you can stop and restart it and your packages will be installed.</p></li>
 <li><p><strong>Temporary</strong>: While your dev environment is running, you can use <code>install.packages(&lt;pkg&gt;)</code>; however keep in mind that modules/packages installed this way will not persist across sessions by default (i.e.&nbsp;if you stop and restart your scientific environment, you will need to reinstall them). This method is suitable for development/testing, but packages that are core to your project should be added to <code>code/packages.R</code>.</p></li>
 </ul>
-</section>
-</div>
-</div>
-</div>
-<!-- Invisible Link to Include the File in Build -->
-<p><a href="../files/dist/reproduce-work-linux" style="display:none;">Invisible Link</a> <a href="../files/dist/reproduce-work-macos" style="display:none;">Invisible Link</a> <a href="../files/dist/install.sh" style="display:none;">Invisible Link</a> <a href="../files/media/rw1.mp4" style="display:none;">Invisible Link</a></p>
+<p>::: <!-- end of .panel-tabset environment --></p>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if a URL parameter exists
+    function hasParam(param) {
+        return new URLSearchParams(window.location.search).has(param);
+    }
+
+    // Function to simulate a click on an element
+    function clickElement(selector) {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.click();
+        }
+    }
+
+    // Check for each parameter and click the corresponding element
+    if (hasParam('jupyter')) {
+        clickElement('#jupyter');
+    } else if (hasParam('python')) {
+        clickElement('#python');
+    } else if (hasParam('rstudio')) {
+        clickElement('#rstudio-server');
+    }
+});
+</script>
 
 
-</section>
 </section>
 </section>
 
