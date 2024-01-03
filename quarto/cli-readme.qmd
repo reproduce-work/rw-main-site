@@ -1,9 +1,89 @@
----
-title: "Getting started with reproduce.work"
-format: html
-includes:
-  after_body: sci-env-tabs.html
----
+# reproduce.work
+
+
+*reproduce.work is designed to be the simplest and most user-friendly interface available for running the most common scientific computing workflows in a fully cross-platform manner.* 
+
+This project is based on a paradigm from software engineering called containerization, which is used extensively in applications that require code to be reliably executed across different computing environments and time periods. 
+
+However, reproduce.work provides a simple framework that abstracts away from underlying complexities and technical details of containerization, providing a streamlined workflow for truly reproducible science. This allows scientists to focus on their research, rather than the technical details of containerization.
+
+
+
+<details>
+<summary>Explained in meme format</summary>
+<div id="shoggoth" class="bleedover-image-wrapper">
+<img src="/files/img/shoggoth.png" alt="reproduce.work represented as shoggoth meme" />
+</div>
+</details>
+
+
+### Usage &amp; Installation
+
+After installing a container engine (i.e., [Docker](https://docs.docker.com/get-docker/)) reproduce.work can be used via a simple command-line interface that requires no interaction with the underlying containerization technology. 
+
+To learn more about how to use the framework, check out the [Getting Started](/docs/getting-started) page:
+
+<div style="text-align:center;">
+<!-- Call to Action Button -->
+<a href="./docs/getting-started.html">
+<p style="font-size: 1.5em;" class="cta-button">
+Get Started
+<p style="font-size: 1em;">(experimental release 🧑‍🔬)</p>
+</p>
+</a>
+</div>
+
+
+
+## Current release
+
+This project is currently in an alpha release phase and serves as proof of concept for further development. Current support is offered for the following scientific environments:
+
+<div class="logo-container">
+<div class="logo-item">
+<a href="/docs/getting-started.html?jupyter#basic-commands">
+<img src="/files/img/logos/jupyter.svg" class="logo-image">
+<div class="logo-text">
+<p>Jupyter<p>
+`rw init --sci-env=jupyter`
+</div>
+</a>
+</div>
+<div class="logo-item">
+<a href="/docs/getting-started.html?python#basic-commands">
+<img src="/files/img/logos/python.png" class="logo-image">
+<div class="logo-text">
+<p>Python<p>
+`rw init --sci-env=python`
+</div>
+</a>
+</div>
+<div class="logo-item">
+<a href="/docs/getting-started.html?rstudio#basic-commands">
+<img src="/files/img/logos/rstudio.png" class="logo-image">
+<div class="logo-text">
+<p>RStudio<p>
+`rw init --sci-env=rstudio`
+</div>
+</a>
+</div>
+</div>
+
+Support for other common environments, including Stata, Matlab, and Julia, will be possible with future development.
+
+<details>
+<summary>Under the hood</summary>
+In its current iteration, reproduce.work is a Node-based command line executable that is designed to be a user-friendly interface for:
+ 
+- building and running common scientific container images, 
+- managing files and volume interactions with containers, and 
+- dealing with local port management. 
+
+These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. Outside of requiring a local installation, this tool does not assume that its users are familiar with containerization software at all, while simultaneously allowing them to build cross-platform compatible code with minimal interruption to their existing scientific workflows.  
+</details>-e 
+
+
+# Getting Started
 
 
 
@@ -89,25 +169,15 @@ There are THREE main commands in the reproduce.work workflow:
 2. `rw build`: download dependencies and install/package them in a self-contained environment
 3. `rw launch`: launch your project's scientific environment and begin working
 
-#### Quick Start
+#### Suggested usage:
 
-Create a directory for your project:
+Create a directory for your reproducible project:
+
 ``` {.bash filename="Terminal"}
+# Create a new directory for your project
 mkdir my_project && cd my_project
 ```
 
-``` {.bash filename="Terminal"}
-rw init && rw build && rw launch -o
-```
-
-
-#### Suggested usage:
-
-Under the hood, `rw quickstart` is executing the following commands in order.
-
-To get a sense of the reproduce.work workflow, we recommend manually running these three commands yourself when starting a new project, though `quickstart` was developed for a reason! 
-
-Primary commands:
 
 ### 1. Initialize: `rw init`
 

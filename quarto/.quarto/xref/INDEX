@@ -28,5 +28,18 @@
   },
   "faq.qmd": {
     "faq.html": "50201bea"
+  },
+  "clireadme.md": {
+    "clireadme.html": "f1381e49"
+  },
+  "clireadme.qmd": {
+    "clireadme.md": "dfebc8ce"
+  },
+  "combined.qmd": {
+    "cli-readme.md": "13102455",
+    "combined.html": "dfe3106a"
+  },
+  "cli-readme.qmd": {
+    "cli-readme.html": "e121da81"
   }
 }

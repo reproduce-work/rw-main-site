@@ -38,8 +38,6 @@ format:
     toc: true
 
 resource-files:
-  - files/*
   - files/dist/install.sh
   - files/dist/reproduce-work-macos
   - files/dist/reproduce-work-linux
-  - files/media/rw1.mp4
