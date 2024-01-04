@@ -27,7 +27,7 @@ OS_TYPE="$(uname -s)"
 CPU_ARCH="$(uname -m)"
 
 # Define the URLs for different architectures
-BASE_URL="https://github.com/reproduce-work/rw-main-site/releases/download/v0.0.1/"
+BASE_URL="https://github.com/reproduce-work/reproduce-work-cli/releases/download/v0.0.1/"
 CLI_URL_LINUX_X64="${BASE_URL}reproduce-work-linux-x64"
 CLI_URL_LINUX_ARM64="${BASE_URL}reproduce-work-linux-arm64"
 CLI_URL_MACOS_X64="${BASE_URL}reproduce-work-macos-x64"
