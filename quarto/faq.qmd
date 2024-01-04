@@ -31,11 +31,6 @@ Containers can seemlesly run working computational environments with each of the
 Due to the vagaries of software engineering, tools like Python virtual environments and R project files still leave a lot of room for technical decay; this limits the longevity of projects that rely on these types of tools exclusively. By packaging scientific computing environments into containers, scientists can ensure that their analyses can be replicated exactly, irrespective of changes in underlying technology or platforms. This approach enhances the reliability of scientific findings and facilitates collaboration --- both within research teams but also across the broader scientific community by allowing anyone, anywhere, anytime to build upon the work of others. 
 
 
-All this being said, there is a version of this project which is focused more on developing **standards**; or perhaps in its best form, the project can help create both reproducibility standards *and* software for creating, verifying, and working with projects that are designed to meet those standards.
-
-If we abstract away from the underlying software for a moment, what we really seek as scientists is some form of credible independent *verification*. Perhaps there is a way to achieve "verification" in ways that are more general than quantitative reproducibility.^[e.g., any set of software instructions that others can verify; or perhaps in an even more abstract incarnation, we could allow for any set of written instructions]. That being said, a significant aspect of what makes science scientific does come down to its quantifiability. In principle, much of which passes for computational science can be packaged in containerized projects with little additional overhead; this is essentially the motivation for this project in a nutshell. 
-
-
 </details>
 
 
