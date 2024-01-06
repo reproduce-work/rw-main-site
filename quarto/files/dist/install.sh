@@ -99,20 +99,23 @@ if ! curl -sSL "$CLI_URL" -o "rw.tar.gz"; then
     exit 1
 fi
 
-# Unpack the tar.gz file
-if ! tar -zxvf rw.tar.gz -C "$INSTALL_DIR"; then
+# Extract the tarball in the current directory
+if ! tar -zxvf rw.tar.gz; then
     echo "Error: Failed to unpack the CLI tool."
     exit 1
 fi
 
-# Assuming the executable name is 'rw' inside the tarball
-CLI_EXECUTABLE_PATH="$INSTALL_DIR/rw"
+# Move the extracted file to the installation directory
+# Assuming the executable name inside the tarball matches $EXECUTABLE_NAME
+if ! mv "$EXECUTABLE_NAME" "$INSTALL_DIR/rw"; then
+    echo "Error: Failed to move the CLI tool to $INSTALL_DIR."
+    exit 1
+fi
 
-...
+CLI_EXECUTABLE_PATH="$INSTALL_DIR/rw"
 
 # Function to install the CLI tool
 install_cli() {
-    mv "$INSTALL_DIR/$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"
     if ! chmod +x "$CLI_EXECUTABLE_PATH"; then
         echo "Error: Failed to make the CLI tool executable."
         exit 1
