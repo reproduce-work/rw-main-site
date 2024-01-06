@@ -110,10 +110,12 @@ rm -f reproduce-work.tar.gz
 
 CLI_EXECUTABLE_PATH="$INSTALL_DIR/rw"
 
+# Export the variables
+export EXECUTABLE_NAME INSTALL_DIR CLI_EXECUTABLE_PATH
+
 # Function to install the CLI tool
 install_cli() {
     # Move the extracted file to the installation directory
-    # Assuming the executable name inside the tarball matches $EXECUTABLE_NAME
     if ! mv "$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"; then
         echo "Error: Failed to move the CLI tool to $INSTALL_DIR."
         exit 1
@@ -133,7 +135,8 @@ if [ -w "$INSTALL_DIR" ]; then
 else
     echo "You need sudo access to install to $INSTALL_DIR; enter your password to continue or try installing again using the local installation method (option 2)."
     if sudo -v; then
-        sudo bash -c "EXECUTABLE_NAME='$EXECUTABLE_NAME' INSTALL_DIR='$INSTALL_DIR' CLI_EXECUTABLE_PATH='$CLI_EXECUTABLE_PATH' $(declare -f install_cli); install_cli"
+        # Passing function definition as a string to sudo bash -c
+        sudo bash -c "$(declare -f install_cli); install_cli"
     else
         echo "Error: Failed to obtain sudo access."
         exit 1
