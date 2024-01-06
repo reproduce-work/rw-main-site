@@ -100,15 +100,8 @@ if ! curl -sSL "$CLI_URL" -o "rw.tar.gz"; then
 fi
 
 # Extract the tarball in the current directory
-if ! tar -zxvf rw.tar.gz; then
+if ! tar -zxvf reproduce-work.tar.gz; then
     echo "Error: Failed to unpack the CLI tool."
-    exit 1
-fi
-
-# Move the extracted file to the installation directory
-# Assuming the executable name inside the tarball matches $EXECUTABLE_NAME
-if ! mv "$EXECUTABLE_NAME" "$INSTALL_DIR/rw"; then
-    echo "Error: Failed to move the CLI tool to $INSTALL_DIR."
     exit 1
 fi
 
@@ -116,10 +109,21 @@ CLI_EXECUTABLE_PATH="$INSTALL_DIR/rw"
 
 # Function to install the CLI tool
 install_cli() {
+    # Move the extracted file to the installation directory
+    # Assuming the executable name inside the tarball matches $EXECUTABLE_NAME
+    if ! mv "$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"; then
+        echo "Error: Failed to move the CLI tool to $INSTALL_DIR."
+        exit 1
+    fi
+
     if ! chmod +x "$CLI_EXECUTABLE_PATH"; then
         echo "Error: Failed to make the CLI tool executable."
         exit 1
     fi
+
+    # Remove the tar.gz file after successful installation
+    rm -f reproduce-work.tar.gz
+
     echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
 }
 
