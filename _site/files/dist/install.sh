@@ -94,7 +94,7 @@ fi
 echo "Downloading..."
 
 # Download the CLI tool to a temporary file
-if ! curl -sSL "$CLI_URL" -o "rw.tar.gz"; then
+if ! curl -sSL "$CLI_URL" -o "reproduce-work.tar.gz"; then
     echo "Error: Failed to download the CLI tool from $CLI_URL."
     exit 1
 fi
