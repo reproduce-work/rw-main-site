@@ -110,37 +110,25 @@ rm -f reproduce-work.tar.gz
 
 CLI_EXECUTABLE_PATH="$INSTALL_DIR/rw"
 
-# Export the variables
-export EXECUTABLE_NAME INSTALL_DIR CLI_EXECUTABLE_PATH
-
-# Function to install the CLI tool
+# Function to install the CLI tool without sudo
 install_cli() {
-    # Move the extracted file to the installation directory
-    if ! mv "$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"; then
-        echo "Error: Failed to move the CLI tool to $INSTALL_DIR."
-        exit 1
-    fi
-
-    if ! chmod +x "$CLI_EXECUTABLE_PATH"; then
-        echo "Error: Failed to make the CLI tool executable."
-        exit 1
-    fi
-
+    mv "$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"
+    chmod +x "$CLI_EXECUTABLE_PATH"
     echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
 }
 
-# Check if the user has write permissions to the installation directory
-if [ -w "$INSTALL_DIR" ]; then
-    install_cli
+# Function to install the CLI tool with sudo
+sudo_install_cli() {
+    echo "You need sudo access to install to $INSTALL_DIR; enter your password to continue or try installing again using the local installation method."
+    sudo mv "$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"
+    sudo chmod +x "$CLI_EXECUTABLE_PATH"
+    echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
+}
+
+if [ "$GLOBAL_INSTALL" = true ]; then
+    sudo_install_cli
 else
-    echo "You need sudo access to install to $INSTALL_DIR; enter your password to continue or try installing again using the local installation method (option 2)."
-    if sudo -v; then
-        # Passing function definition as a string to sudo bash -c
-        sudo bash -c "$(declare -f install_cli); install_cli"
-    else
-        echo "Error: Failed to obtain sudo access."
-        exit 1
-    fi
+    install_cli
 fi
 
 
