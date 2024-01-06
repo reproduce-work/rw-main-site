@@ -105,6 +105,9 @@ if ! tar -zxvf reproduce-work.tar.gz; then
     exit 1
 fi
 
+# Delete the tar.gz file after successful extraction
+rm -f reproduce-work.tar.gz
+
 CLI_EXECUTABLE_PATH="$INSTALL_DIR/rw"
 
 # Function to install the CLI tool
@@ -121,9 +124,6 @@ install_cli() {
         exit 1
     fi
 
-    # Remove the tar.gz file after successful installation
-    rm -f reproduce-work.tar.gz
-
     echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
 }
 
@@ -133,12 +133,13 @@ if [ -w "$INSTALL_DIR" ]; then
 else
     echo "You need sudo access to install to $INSTALL_DIR; enter your password to continue or try installing again using the local installation method (option 2)."
     if sudo -v; then
-        sudo bash -c "$(declare -f install_cli); INSTALL_DIR='$INSTALL_DIR'; install_cli"
+        sudo bash -c "EXECUTABLE_NAME='$EXECUTABLE_NAME' INSTALL_DIR='$INSTALL_DIR' CLI_EXECUTABLE_PATH='$CLI_EXECUTABLE_PATH' $(declare -f install_cli); install_cli"
     else
         echo "Error: Failed to obtain sudo access."
         exit 1
     fi
 fi
+
 
 # Conditional message based on the choice of installation method
 if [ "${choice:-0}" -eq 1 ]; then
