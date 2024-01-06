@@ -119,7 +119,9 @@ install_cli() {
 
 # Function to install the CLI tool with sudo
 sudo_install_cli() {
-    echo "You need sudo access to install to $INSTALL_DIR; enter your password to continue or try installing again using the local installation method."
+    echo "reproduce-work: sudo access to install to $INSTALL_DIR; enter your password to continue (or try again using the local installation method)."
+    sudo echo "Authenticated successfully. Installing..."
+
     sudo mv "$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"
     sudo chmod +x "$CLI_EXECUTABLE_PATH"
     echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
