@@ -3,7 +3,6 @@ set -e
 
 # Initialize variables
 GLOBAL_INSTALL=false
-LOCAL_INSTALL=false
 
 # Parse flag arguments
 while getopts "gl" opt; do
@@ -12,7 +11,7 @@ while getopts "gl" opt; do
       GLOBAL_INSTALL=true
       ;;
     l)
-      LOCAL_INSTALL=true
+      GLOBAL_INSTALL=false
       ;;
     *)
       echo "Invalid option: -$OPTARG" >&2
@@ -74,6 +73,7 @@ else
 
   case "$choice" in
     1)
+      GLOBAL_INSTALL=true
       INSTALL_DIR="/usr/local/bin"
       ;;
     2)
