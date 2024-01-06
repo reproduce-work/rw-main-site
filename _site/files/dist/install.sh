@@ -28,26 +28,22 @@ CPU_ARCH="$(uname -m)"
 
 # Define the URLs for different architectures
 BASE_URL="https://github.com/reproduce-work/reproduce-work-cli/releases/download/v0.0.1/"
-CLI_URL_LINUX_X64="${BASE_URL}reproduce-work-linux-x64"
-CLI_URL_LINUX_ARM64="${BASE_URL}reproduce-work-linux-arm64"
-CLI_URL_MACOS_X64="${BASE_URL}reproduce-work-macos-x64"
-CLI_URL_MACOS_ARM64="${BASE_URL}reproduce-work-macos-arm64"
 
 # Determine the appropriate CLI URL based on the user's platform and architecture
 if [ "$OS_TYPE" == "Linux" ]; then
   if [ "$CPU_ARCH" == "x86_64" ]; then
-    CLI_URL="$CLI_URL_LINUX_X64"
+    EXECUTABLE_NAME="reproduce-work-linux-x64"
   elif [[ "$CPU_ARCH" == "arm64" || "$CPU_ARCH" == "aarch64" ]]; then
-    CLI_URL="$CLI_URL_LINUX_ARM64"
+    EXECUTABLE_NAME="reproduce-work-linux-arm64"
   else
     echo "Unsupported architecture: $CPU_ARCH. Exiting."
     exit 1
   fi
 elif [ "$OS_TYPE" == "Darwin" ]; then
   if [ "$CPU_ARCH" == "x86_64" ]; then
-    CLI_URL="$CLI_URL_MACOS_X64"
+    EXECUTABLE_NAME="reproduce-work-macos-x64"
   elif [ "$CPU_ARCH" == "arm64" ]; then
-    CLI_URL="$CLI_URL_MACOS_ARM64"
+    EXECUTABLE_NAME="reproduce-work-macos-arm64"
   else
     echo "Unsupported architecture: $CPU_ARCH. Exiting."
     exit 1
@@ -57,6 +53,8 @@ else
   exit 1
 fi
 
+
+CLI_URL="${BASE_URL}${EXECUTABLE_NAME}.tar.gz"
 
 
 # Determine the installation method
@@ -96,23 +94,30 @@ fi
 echo "Downloading..."
 
 # Download the CLI tool to a temporary file
-if ! curl -sSL "$CLI_URL" -o "rw.tmp"; then
+if ! curl -sSL "$CLI_URL" -o "rw.tar.gz"; then
     echo "Error: Failed to download the CLI tool from $CLI_URL."
     exit 1
 fi
 
+# Unpack the tar.gz file
+if ! tar -zxvf rw.tar.gz -C "$INSTALL_DIR"; then
+    echo "Error: Failed to unpack the CLI tool."
+    exit 1
+fi
+
+# Assuming the executable name is 'rw' inside the tarball
+CLI_EXECUTABLE_PATH="$INSTALL_DIR/rw"
+
+...
+
 # Function to install the CLI tool
 install_cli() {
-    # Move and set execute permissions
-    if ! mv "rw.tmp" "$INSTALL_DIR/rw"; then
-        echo "Error: Failed to move the CLI tool to $INSTALL_DIR."
-        exit 1
-    fi
-    if ! chmod +x "$INSTALL_DIR/rw"; then
+    mv "$INSTALL_DIR/$EXECUTABLE_NAME" "$CLI_EXECUTABLE_PATH"
+    if ! chmod +x "$CLI_EXECUTABLE_PATH"; then
         echo "Error: Failed to make the CLI tool executable."
         exit 1
     fi
-    echo "Installation complete. The CLI tool is installed in $INSTALL_DIR."
+    echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
 }
 
 # Check if the user has write permissions to the installation directory
@@ -128,15 +133,13 @@ else
     fi
 fi
 
-echo "Installation complete. The reproduce.work CLI tool is installed in $INSTALL_DIR."
-
-
-if [ "$choice" -eq 1 ]; then
+# Conditional message based on the choice of installation method
+if [ "${choice:-0}" -eq 1 ]; then
   echo "You can now run reproduce.work directly from the command line."
   echo "Example: rw <command>"
-elif [ "$choice" -eq 2 ]; then
-  echo "You can now use reproduce.work from within the folder $(dirname -- "$(pwd)/$INSTALL_DIR")/$(basename -- "$(pwd)/$INSTALL_DIR")."
+elif [ "${choice:-0}" -eq 2 ]; then
+  echo "You can now use reproduce.work from within the folder $INSTALL_DIR."
   echo "Example usage:"
-  echo "    cd $(dirname -- "$(pwd)/$INSTALL_DIR")/$(basename -- "$(pwd)/$INSTALL_DIR")"
+  echo "    cd $INSTALL_DIR"
   echo "    ./rw <command>"
 fi
