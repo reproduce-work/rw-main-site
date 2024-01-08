@@ -35,7 +35,7 @@ includes:
 
 ## Installation
 
-The reproduce.work command line interface can be installed with following shell command:
+The reproduce.work command line interface can be installed with the following shell command:
 
 ``` {.bash filename="Terminal"}
 curl -sSL https://reproduce.work/install | bash
@@ -46,9 +46,15 @@ You will be prompted with two options:
 1. Install to your machine (in `/usr/local/bin`) for use anywhere in your command line
 2. Install to your current directory. This creates a folder in your current directory named `rw-project`; with this choice, the `rw` command line tools can only be executed at the root of your project directory (and you may need to replace any `rw` command with `./rw`). 
 
-Besides containerization software and the reproduce.work CLI tool, *no other software is required*. All other dependencies will be installed **inside a containerized environment** automatically when you run the `rw build` command. If you adopt containerization in earnest, there is essentially no need to ever install Python, R, or any other scientific computing software on your machine again. A further benefit of containerized computing is that your reproduce.work projects will not interfere with each other or any other software you have installed on your machine.
+Besides containerization software and the reproduce.work CLI tool, *no other software is required*. All other dependencies will be installed **inside a containerized environment** automatically when you run the `rw build` command. Your reproduce.work projects should not interfere with each other or any other software you have installed on your machine.
 
 
+<details>
+<summary>Install manually</summary>
+The binaries for reproduce.work are also available for direct download from GitHub: https://github.com/reproduce-work/reproduce-work-cli/releases
+</details>
+
+<!--
 <details>
 <summary>Run with Docker</summary>
 In its current form, the reproduce.work CLI is designed to be a user-friendly interface for:
@@ -80,6 +86,7 @@ rw --help
 ```
 
 </details>
+-->
 
 ## Basic Commands
 

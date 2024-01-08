@@ -256,7 +256,7 @@ reproduce.work is being published as an alpha development release and should be 
 </section>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>The reproduce.work command line interface can be installed with following shell command:</p>
+<p>The reproduce.work command line interface can be installed with the following shell command:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
@@ -268,41 +268,46 @@ reproduce.work is being published as an alpha development release and should be 
 <li>Install to your machine (in <code>/usr/local/bin</code>) for use anywhere in your command line</li>
 <li>Install to your current directory. This creates a folder in your current directory named <code>rw-project</code>; with this choice, the <code>rw</code> command line tools can only be executed at the root of your project directory (and you may need to replace any <code>rw</code> command with <code>./rw</code>).</li>
 </ol>
-<p>Besides containerization software and the reproduce.work CLI tool, <em>no other software is required</em>. All other dependencies will be installed <strong>inside a containerized environment</strong> automatically when you run the <code>rw build</code> command. If you adopt containerization in earnest, there is essentially no need to ever install Python, R, or any other scientific computing software on your machine again. A further benefit of containerized computing is that your reproduce.work projects will not interfere with each other or any other software you have installed on your machine.</p>
+<p>Besides containerization software and the reproduce.work CLI tool, <em>no other software is required</em>. All other dependencies will be installed <strong>inside a containerized environment</strong> automatically when you run the <code>rw build</code> command. Your reproduce.work projects should not interfere with each other or any other software you have installed on your machine.</p>
 <details>
 <summary>
-Run with Docker
+Install manually
 </summary>
-<p>In its current form, the reproduce.work CLI is designed to be a user-friendly interface for:</p>
-<ul>
-<li>building and running common scientific container images,</li>
-<li>managing files and volume interactions with containers, and</li>
-<li>dealing with local port management.</li>
-</ul>
-<p>These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. As such, outside of requiring a local installation, this tool does not assume that its users are familiar with Docker at all.</p>
-<p>However, while the tool is in active development, its early adopters will likely have some familiarity with Docker. For such users, reproduce.work can be used as a set of developer tools to automate the handling of the tasks described above. The reproduce-work CLI has itself been developed with containerization in mind and can be used via its own Docker image without requiring direct installation of the reproduce.work binaries at all.</p>
-<p>You can mount your current directory to the image and use the <code>rw</code> commands in interactive mode inside the container (with access to your machine’s files at <code>$(pwd)</code>):</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Terminal</strong></pre>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/app ghcr.io/reproduce-work/rw-cli:0.0.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can also add an alias to your shell configuration as a shortcut to simulate a full installation via the tool’s Docker image:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>.shellrc</strong></pre>
-</div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> rw=<span class="st">'docker run -v $(pwd):/app ghcr.io/reproduce-work/rw-cli:0.0.1'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>After running <code>source ~/.shellrc</code>, you can use the <code>rw</code> command as if it was installed on your machine:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Terminal</strong></pre>
-</div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+The binaries for reproduce.work are also available for direct download from GitHub: https://github.com/reproduce-work/reproduce-work-cli/releases
 </details>
+<!--
+<details>
+<summary>Run with Docker</summary>
+In its current form, the reproduce.work CLI is designed to be a user-friendly interface for:
+ 
+- building and running common scientific container images, 
+- managing files and volume interactions with containers, and 
+- dealing with local port management. 
+
+These are common headaches for users of containers and are exactly the types of issues that reproduce.work is designed to automate. As such, outside of requiring a local installation, this tool does not assume that its users are familiar with Docker at all. 
+
+However, while the tool is in active development, its early adopters will likely have some familiarity with Docker. For such users, reproduce.work can be used as a set of developer tools to automate the handling of the tasks described above. The reproduce-work CLI has itself been developed with containerization in mind and can be used via its own Docker image without requiring direct installation of the reproduce.work binaries at all. 
+
+You can mount your current directory to the image and use the `rw` commands in interactive mode inside the container (with access to your machine's files at `$(pwd)`): 
+
+``` {.bash filename="Terminal"}
+docker run --rm -it -v $(pwd):/app ghcr.io/reproduce-work/rw-cli:0.0.1
+```
+
+You can also add an alias to your shell configuration as a shortcut to simulate a full installation via the tool's Docker image:
+
+``` {.bash filename=".shellrc"}
+alias rw='docker run -v $(pwd):/app ghcr.io/reproduce-work/rw-cli:0.0.1'
+```
+
+After running `source ~/.shellrc`, you can use the `rw` command as if it was installed on your machine:
+
+``` {.bash filename="Terminal"}
+rw --help
+```
+
+</details>
+-->
 </section>
 <section id="basic-commands" class="level2">
 <h2 class="anchored" data-anchor-id="basic-commands">Basic Commands</h2>
@@ -319,13 +324,13 @@ Run with Docker
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_project <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> my_project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_project <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> my_project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="kw">&amp;&amp;</span> <span class="ex">rw</span> build <span class="kw">&amp;&amp;</span> <span class="ex">rw</span> launch <span class="at">-o</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="kw">&amp;&amp;</span> <span class="ex">rw</span> build <span class="kw">&amp;&amp;</span> <span class="ex">rw</span> launch <span class="at">-o</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="suggested-usage" class="level4">
@@ -360,8 +365,8 @@ Run with Docker
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --sci-env=jupyter by default</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --sci-env=jupyter by default</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <!--
@@ -437,7 +442,7 @@ Project directory structure
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>After running this command, you should see several files and folders added to your project directory:</p>
@@ -502,7 +507,7 @@ Project directory structure
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>rstudio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rw</span> init <span class="at">--sci-env</span><span class="op">=</span>rstudio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>After running this command, you should see several files and folders added to your project directory:</p>
